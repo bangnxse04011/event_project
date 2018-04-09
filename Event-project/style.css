@@ -336,7 +336,7 @@ img {
 }
 
 .mu-top-slider .mu-top-slider-single .mu-top-slider-content .mu-slider-small-title {
-  font-family: "Tangerine", cursive;
+  font-family: "Helvetica", cursive;
   font-size: 100px;
   font-weight: 400;
   line-height: 40px;
@@ -469,7 +469,7 @@ img {
 
 .mu-about-us-right ul li:before {
   content: "\f0da";
-  font-family: fontAwesome;
+ 
   margin-right: 10px;
 }
 
@@ -553,7 +553,7 @@ img {
 }
 
 .mu-counter-nav li .mu-single-counter span {
-  font-family: "Tangerine", cursive;
+  font-family: "Times New Roman", cursive;
   font-size: 40px;
 }
 
