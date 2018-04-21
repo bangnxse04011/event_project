@@ -1,0 +1,63 @@
+{
+    "menu_homepage": "Trang Chủ",
+    "menu_info": "Giới Thiệu",
+    "menu_event": "Sự Kiện",
+    "menu_collection": "Bộ Sưu Tập",
+    "menu_contact": "Liên Hệ",
+    "menu_login": [
+        {
+            "name": "Đăng Nhập",
+            "link": "authen-user/login"
+        }
+    ],
+    "menu_logout": [
+        {
+            "name": "Đăng Ký",
+            "link": "authen-user/Logout"
+        }
+    ],
+    "info": [
+        {
+            "name": "Tốc Độ",
+            "details": "Thi công thiết kế gian hàng triển lãm hội chợ tốc độ.",
+            "link": "/stylesheets/assets/img/slider/1.jpeg",
+            "alt": "Thi công thiết kế gian hàng triển lãm hội chợ tốc độ."
+        },
+        {
+            "name": "Chuyên Nghiệp",
+            "details": "Thi công thiết kế gian hàng triển lãm hội chợ chuyên nghiệp.",
+            "link": "/stylesheets/assets/img/slider/2.jpeg",
+            "alt": "Thi công thiết kế gian hàng triển lãm hội chợ chuyên nghiệp."
+        },
+        {
+            "name": "Chất lượng",
+            "details": "Thi công thiết kế gian hàng triển lãm hội chợ chất lượng.",
+            "link": "/stylesheets/assets/img/slider/3.jpeg",
+            "alt": "Thi công thiết kế gian hàng triển lãm hội chợ chất lượng."
+        }
+    ],
+    "info_company": [
+        {
+            "description": "Công ty TNHH EBS Việt Nam chuyên tổ chức các sự kiện, triển lãm chuyên nghiệp. Với mong muốn đóng góp một phần trong việc thúc đẩy kinh tế đất nước bằng cách tạo ra những sân chơi cho các doanh nghiệp trong và ngoài nước – giao lưu, học hỏi công nghệ mới, tìm kiếm đối tác, nâng cao hình ảnh, thương hiệu doanh nghiệp.",
+            "link": "/stylesheets/assets/img/gioithieu.jpg"
+        }
+    ],
+    "event": [
+        {
+            "name ": "Tổ chức sự kiện triển lãm.",
+            "description" : ""
+        },
+        {
+            "name ": "Gian hàng triển lãm.",
+            "description" : ""
+        },
+        {
+            "name ": "Nội thất showroom.",
+            "description" : ""
+        },
+        {
+            "name ": " Thiết kế, in ấn Graphic.",
+            "description" : ""
+        }
+    ]
+}

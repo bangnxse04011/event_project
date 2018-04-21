@@ -1,0 +1,63 @@
+{
+    "menu_homepage": "Home Page",
+    "menu_info": "Introduce",
+    "menu_event": "Events",
+    "menu_collection": "Collections",
+    "menu_contact": "Contact",
+    "menu_login": [
+        {
+            "name": "Login",
+            "link": "authen-user/login"
+        }
+    ],
+    "menu_logout": [
+        {
+            "name": "Logout",
+            "link": "authen-user/Logout"
+        }
+    ],
+    "info": [
+        {
+            "name": "Faster",
+            "details": "Execution design booth exhibition speed fair.",
+            "link": "/stylesheets/assets/img/slider/1.jpeg",
+            "alt": "Execution design booth exhibition speed fair."
+        },
+        {
+            "name": "Profession",
+            "details": "Execution design booth exhibition professional exhibition.",
+            "link": "/stylesheets/assets/img/slider/2.jpeg",
+            "alt": "Execution design booth exhibition professional exhibition."
+        },
+        {
+            "name": "Quality",
+            "details": "Execution design booth exhibition quality exhibition.",
+            "link": "/stylesheets/assets/img/slider/3.jpeg",
+            "alt": "Execution design booth exhibition quality exhibition."
+        }
+    ],
+    "info_company": [
+        {
+            "description": "EBS Vietnam Limited specializes in organizing events, professional exhibitions. Wishing to contribute a part in promoting the country's economy by creating playgrounds for domestic and foreign enterprises - exchanges, learning new technologies, seeking partners, enhancing the image, corporate brand.",
+            "link": "/stylesheets/assets/img/gioithieu.jpg"
+        }
+    ],
+    "event": [
+        {
+            "name ": "Organize exhibition events.",
+            "description" : ""
+        },
+        {
+            "name ": "Exhibition booth.",
+            "description" : ""
+        },
+        {
+            "name ": "Furniture showroom.",
+            "description" : ""
+        },
+        {
+            "name ": "Graphic design.",
+            "description" : ""
+        }
+    ]
+}
