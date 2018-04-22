@@ -1866,3 +1866,7 @@ RESERVATION SECTION
   from { margin-left: -150px;}
   to {margin-left: 25pt;}
 }
+.fixSizeImg{
+  width: 350px;
+  height: 262px;
+}
