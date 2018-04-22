@@ -33,11 +33,9 @@ app.use('/', index);
 app.use('/events', events);
 app.use('/users', users);
 app.use('/gallery',gallery);
-<<<<<<< HEAD
 app.use('/details',details);
-=======
 app.use('/feed_back',feed_back);
->>>>>>> f00d1fca9b899f888a121dec7ccac77dedf76452
+
 
 app.use(session({
   secret : "secret",
