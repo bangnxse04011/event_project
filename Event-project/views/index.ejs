@@ -38,8 +38,8 @@
             <span class="icon-bar"></span>
           </button>
           <a class="navbar-brand" style="margin-right: -121px;" href="">
-              <img src="/stylesheets/img/logo.jpg" alt="Logo img">
-            </a>
+            <img src="/stylesheets/img/logo.jpg" alt="Logo img">
+          </a>
           <a class="navbar-brand" href="/" style="font-size: 26px;">EBC
             <span>
               <%= info_total_home_page[1] %>
@@ -145,9 +145,11 @@
                   <ul>
                     <% menu_data.event.forEach(function(info) { %>
                       <li>
-                        <b><%= info['name '] %></b>
+                        <b>
+                          <%= info['name '] %>
+                        </b>
                       </li>
-                    <% }); %>
+                      <% }); %>
                   </ul>
                 </div>
               </div>
