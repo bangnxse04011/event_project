@@ -64,15 +64,15 @@
     "product": [
         {
             "name": "Events",
-            "href": "#events"
+            "href": "events"
         },
         {
             "name": "Exhibition",
-            "href": "#exhibition"
+            "href": "exhibition"
         },
         {
             "name": "Showroom",
-            "href": "#showroom"
+            "href": "showroom"
         }
     ]
 }

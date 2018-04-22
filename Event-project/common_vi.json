@@ -64,15 +64,15 @@
     "product": [
         {
             "name": "Sự Kiện",
-            "href": "#events"
+            "href": "events"
         },
         {
             "name": "Triển lãm",
-            "href": "#exhibition"
+            "href": "exhibition"
         },
         {
             "name": "Showroom",
-            "href": "#showroom"
+            "href": "showroom"
         }
     ]
 }
