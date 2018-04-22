@@ -959,6 +959,11 @@ RESERVATION SECTION
 .mu-single-gallery .mu-single-gallery-item:hover .mu-single-gallery-info {
   background-color: rgba(0, 0, 0, 0.8);
   opacity: 1;
+  
+ /* -webkit-animation-name: example; /* Safari 4.0 - 8.0 */
+ /* -webkit-animation-duration: 1s; /* Safari 4.0 - 8.0 */
+ /* animation-name: example; */
+ /* animation-duration: 1s; */
 }
 
 .mu-single-gallery .mu-single-gallery-item .mu-single-gallery-img {
@@ -985,7 +990,7 @@ RESERVATION SECTION
   right: 0;
   bottom: 0;
   text-align: center;
-  padding-top: 28%;
+  padding-top: 15%;
   opacity: 0;
   -webkit-transition: all 0.8s;
   -moz-transition: all 0.8s;
@@ -1828,8 +1833,36 @@ RESERVATION SECTION
 @media (max-width: 320px) {
 
   #mu-gallery .mu-gallery-area .mu-gallery-content .mu-gallery-body .mu-single-gallery .mu-single-gallery-item .mu-single-gallery-info {
-    padding-top: 25.5%;
+    padding-top: 15%;
   }
 
   
+}
+.titleonhover{
+ 
+  width: 80%;
+  margin-left: 25pt;
+ 
+}
+
+ 
+
+.titleonhover > h2{
+  color: rgb(211, 68, 68) !important; 
+}
+.perTitle{
+  background: white;
+  margin-top: 15px;
+  white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+}
+@keyframes example {
+  from {margin-left: -150px;}
+  to {margin-left: 25pt;}
+}
+@-webkit-keyframes example {
+  from { margin-left: -150px;}
+  to {margin-left: 25pt;}
 }
