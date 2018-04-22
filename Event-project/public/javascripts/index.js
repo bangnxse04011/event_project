@@ -17,7 +17,7 @@ function find_all_events(event) {
         if (xhttp.readyState == 4 && xhttp.status == 200) {
             data_events = JSON.parse(xhttp.responseText);
             for (var i = 0; i < data_events.length; i++) {
-                str += "<li> <div class='media'> <div class='media-left'> <a href='#'> <img class='media-object' src='/stylesheets/assets/img/menu/item-1.jpg' alt='img'> </a> </div> <div class='media-body' style=' white-space: nowrap; overflow: hidden; text-overflow: ellipsis; '> <h4 class='media-heading'> <a href='#'> <b>" + data_events[i]['title'] + "</b> </a> </h4> <span class='mu-menu-price'>" + numberWithCommas(data_events[i]['price']) + " VND</span> <p>" + data_events[i]['description'] + " (" + data_events[i]['fullName'] + ")</p> </div> </div> </li>";
+                str += "<li> <div class='media'> <div class='media-left'> <a href='#'> <img class='media-object' src='/stylesheets/assets/img/menu/" + data_events[i]['path_img'] + "' alt='img'> </a> </div> <div class='media-body' style=' white-space: nowrap; overflow: hidden; text-overflow: ellipsis; '> <h4 class='media-heading'> <a href='#'> <b>" + data_events[i]['title'] + "</b> </a> </h4> <span class='mu-menu-price'>" + numberWithCommas(data_events[i]['price']) + " VND</span> <p>" + data_events[i]['description'] + " (" + data_events[i]['fullName'] + ")</p> </div> </div> </li>";
             }
             $('.event_showroom ul').append(str);
         }
