@@ -12,7 +12,11 @@ const router = express.Router();
  * Controller if lang is null
  */
 router.get('/', function (req, res, next) {
-    res.redirect('/events/vi');
+    // Get lang in session
+    let lang_session = req.session.lang;
+    // Check lang is null
+    let language = valid_common.valid_lang(lang_session);
+    res.redirect('/events/' + language);
 });
 
 /**
@@ -23,6 +27,8 @@ router.get('/:lang', function (req, res, next) {
     try {
         let lang = req.params['lang'];
         let language = valid_common.valid_lang(lang);
+        // Add lang to session
+        req.session.lang = language;
         // Check lang vi or en
         if (language == 'vi') {
             db_events_vi.findAll({ plain: false }).then(events_vi => {
