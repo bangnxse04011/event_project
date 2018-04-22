@@ -31,3 +31,4 @@ router.get('/:lang', function (req, res, next) {
         res.render(page_common.page_error);
     }
 });
+module.exports = router;
