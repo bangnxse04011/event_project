@@ -4,6 +4,7 @@
     "menu_event": "Sự Kiện",
     "menu_collection": "Bộ Sưu Tập",
     "menu_contact": "Liên Hệ",
+    "page_show_room": "Các mẫu hàng",
     "menu_login": [
         {
             "name": "Đăng Nhập",
@@ -44,20 +45,34 @@
     ],
     "event": [
         {
-            "name ": "Tổ chức sự kiện triển lãm.",
-            "description" : ""
+            "name": "Tổ chức sự kiện triển lãm.",
+            "description": ""
         },
         {
             "name ": "Gian hàng triển lãm.",
-            "description" : ""
+            "description": ""
         },
         {
-            "name ": "Nội thất showroom.",
-            "description" : ""
+            "name": "Nội thất showroom.",
+            "description": ""
         },
         {
-            "name ": " Thiết kế, in ấn Graphic.",
-            "description" : ""
+            "name": " Thiết kế, in ấn Graphic.",
+            "description": ""
+        }
+    ],
+    "product": [
+        {
+            "name": "Sự Kiện",
+            "href": "#events"
+        },
+        {
+            "name": "Triển lãm",
+            "href": "#exhibition"
+        },
+        {
+            "name": "Showroom",
+            "href": "#showroom"
         }
     ]
 }

@@ -4,6 +4,7 @@
     "menu_event": "Events",
     "menu_collection": "Collections",
     "menu_contact": "Contact",
+    "page_show_room": "Showroom",
     "menu_login": [
         {
             "name": "Login",
@@ -44,20 +45,34 @@
     ],
     "event": [
         {
-            "name ": "Organize exhibition events.",
-            "description" : ""
+            "name": "Organize exhibition events.",
+            "description": ""
         },
         {
-            "name ": "Exhibition booth.",
-            "description" : ""
+            "name": "Exhibition booth.",
+            "description": ""
         },
         {
-            "name ": "Furniture showroom.",
-            "description" : ""
+            "name": "Furniture showroom.",
+            "description": ""
         },
         {
-            "name ": "Graphic design.",
-            "description" : ""
+            "name": "Graphic design.",
+            "description": ""
+        }
+    ],
+    "product": [
+        {
+            "name": "Events",
+            "href": "#events"
+        },
+        {
+            "name": "Exhibition",
+            "href": "#exhibition"
+        },
+        {
+            "name": "Showroom",
+            "href": "#showroom"
         }
     ]
 }
