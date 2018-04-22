@@ -10,6 +10,7 @@ var index = require('./routes/index');
 var events = require('./routes/events_demo');
 var users = require('./routes/users');
 var gallery = require('./routes/gallery');
+var details = require('./routes/details');
 
 var app = express();
 
@@ -30,6 +31,7 @@ app.use('/', index);
 app.use('/events', events);
 app.use('/users', users);
 app.use('/gallery',gallery);
+app.use('/details',details);
 
 app.use(session({
   secret : "secret",
