@@ -17,6 +17,7 @@ router.get('/', function (req, res, next) {
     let language = valid_common.valid_lang(lang_session);
     // req.session.lang = language;
     req.session.CUR_URl = '/' + language;
+    console.log(language + " language " + "lang_session " + lang_session)
     res.redirect('/' + language);
   } catch (e) {
     res.render(page_common.page_error);
