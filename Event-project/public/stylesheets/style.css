@@ -959,11 +959,13 @@ RESERVATION SECTION
 .mu-single-gallery .mu-single-gallery-item:hover .mu-single-gallery-info {
   background-color: rgba(0, 0, 0, 0.8);
   opacity: 1;
-  
- /* -webkit-animation-name: example; /* Safari 4.0 - 8.0 */
- /* -webkit-animation-duration: 1s; /* Safari 4.0 - 8.0 */
- /* animation-name: example; */
- /* animation-duration: 1s; */
+}
+
+.mu-single-gallery .mu-single-gallery-item:hover .titleonhover{
+  -webkit-animation-name: example; /* Safari 4.0 - 8.0 */
+  -webkit-animation-duration: 1s; /* Safari 4.0 - 8.0 */
+  animation-name: example; 
+  animation-duration: 1s; 
 }
 
 .mu-single-gallery .mu-single-gallery-item .mu-single-gallery-img {
