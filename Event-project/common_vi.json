@@ -7,6 +7,10 @@
     "page_show_room": "Các mẫu hàng",
     "customer_say": "Khách hàng nói gì?",
     "view" : "Lượt xem",
+    "post_event_admin":"Đăng Bài Sự Kiện",
+    "post_gallery_admin":"Đăng Bài Sưu Tập",
+    "edit_post":"Chỉnh sửa - Xóa",
+    "logout":"Đăng Xuất"    ,
     "menu_login": [
         {
             "name": "Đăng Nhập",

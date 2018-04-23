@@ -6,6 +6,10 @@
     "menu_contact": "Contact",
     "page_show_room": "Showroom",
     "customer_say": "Customers Idea?",
+    "post_event_admin":"Post Event",
+    "post_gallery_admin":"Post Gallery",
+    "edit_post":"Edit - Delete",
+    "logout":"Đăng Xuất",
     "view": "Views",
     "menu_login": [
         {
@@ -15,7 +19,7 @@
     ],
     "menu_logout": [
         {
-            "name": "Logout",
+            "name": "Register",
             "link": "authen-user/Logout"
         }
     ],
