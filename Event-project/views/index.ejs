@@ -314,23 +314,33 @@
                     <!-- Start contact form -->
                     <form id="ajax-contact" method="post" action="mailer.php" class="mu-contact-form">
                       <div class="form-group">
-                        <label for="name"><%= menu_data.contact[0].fullname %></label>
+                        <label for="name">
+                          <%= menu_data.contact[0].fullname %>
+                        </label>
                         <input type="text" class="form-control" id="name" name="name" placeholder="<%= menu_data.contact[0].fullname %>" required>
                       </div>
                       <div class="form-group">
-                        <label for="email"><%= menu_data.contact[0].email %></label>
+                        <label for="email">
+                          <%= menu_data.contact[0].email %>
+                        </label>
                         <input type="email" class="form-control" id="email" name="email" placeholder="<%= menu_data.contact[0].email %>" required>
                       </div>
                       <div class="form-group">
-                        <label for="subject"><%= menu_data.contact[0].title %></label>
+                        <label for="subject">
+                          <%= menu_data.contact[0].title %>
+                        </label>
                         <input type="text" class="form-control" id="subject" name="subject" placeholder="<%= menu_data.contact[0].title %>" required>
                       </div>
                       <div class="form-group">
-                        <label for="message"><%= menu_data.contact[0].message %></label>
+                        <label for="message">
+                          <%= menu_data.contact[0].message %>
+                        </label>
                         <textarea class="form-control" id="message" name="message" cols="30" rows="10" placeholder="<%= menu_data.contact[0].message %>"
                           required></textarea>
                       </div>
-                      <button type="submit" class="mu-send-btn"><%= menu_data.contact[0].value %></button>
+                      <button type="submit" class="mu-send-btn">
+                        <%= menu_data.contact[0].value %>
+                      </button>
                     </form>
                   </div>
                 </div>
@@ -358,7 +368,9 @@
                       </h3>
                       <address>
                         <p>
-                          <span><%= menu_data.details_company[0].time_work %></span>
+                          <span>
+                            <%= menu_data.details_company[0].time_work %>
+                          </span>
                           <%= menu_data.details_company[0].time_in_day %>
                         </p>
                       </address>
@@ -428,7 +440,18 @@
 
   <!-- Custom js -->
   <script src="/stylesheets/assets/js/custom.js"></script>
+  <script lang="javascript">(function () { var pname = ((document.title != '') ? document.title : ((document.querySelector('h1') != null) ? document.querySelector('h1').innerHTML : '')); var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = 1; ga.src = '//live.vnpgroup.net/js/web_client_box.php?hash=265b162ab4d1bd8e7772a553d17f4e64&data=eyJzc29faWQiOjUzNDE0NDUsImhhc2giOiJhY2FiMjhhY2NiNTJjZTU5NzlmM2E3NzMwZDg0MzEwYSJ9&pname=' + pname; var s = document.getElementsByTagName('script'); s[0].parentNode.insertBefore(ga, s[0]); })();</script>
+  <script>
+    // Get the modal
+    var modal = document.getElementById('id01');
 
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function (event) {
+      if (event.target == modal) {
+        modal.style.display = "none";
+      }
+    }
+  </script>
 </body>
 
 </html>
