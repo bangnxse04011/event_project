@@ -8,7 +8,7 @@ $(document).ready(function () {
             var data = JSON.parse(list_event);
             let str = "";
             for (var i = 0; i < data.length; i++) {
-                str += ' <div class="mu-single-gallery col-md-4">  <div class="mu-single-gallery-item">  <figure class="mu-single-gallery-img">   <a class="/details/' + data[i]['id'] + '" href=""><img  alt="img" src="/stylesheets/assets/img/gallery/' + data[i]['path_img'] + '"><div class="mu-single-gallery-info"> <div class="titleonhover"><h2>' + data[i]['title'] + '</h2> <div class="perTitle" >' + data[i]['address'] + '</div> <div class="perTitle">' + data[i]['description'] + '</div> </div> </div> </a></figure></div> </div>';
+                str += ' <div class="mu-single-gallery col-md-4">  <div class="mu-single-gallery-item">  <figure class="mu-single-gallery-img">   <a class="" href="/details/' + data[i]['id'] + '"><img  alt="img" src="/stylesheets/assets/img/gallery/' + data[i]['path_img'] + '"><div class="mu-single-gallery-info"> <div class="titleonhover"><h2>' + data[i]['title'] + '</h2> <div class="perTitle" >' + data[i]['address'] + '</div> <div class="perTitle">' + data[i]['description'] + '</div> </div> </div> </a></figure></div> </div>';
             }
             $('#gallery').html(str);
         }
