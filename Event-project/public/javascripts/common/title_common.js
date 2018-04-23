@@ -7,5 +7,5 @@ module.exports = {
     /**
      * Title en
      */
-    "title_home_en": "EBC Việt Nam Company",
+    "title_home_en": "EBC VietNam Company",
 }

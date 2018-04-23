@@ -1840,6 +1840,12 @@ RESERVATION SECTION
 
   
 }
+@media (max-width: 991px) {
+
+  .fixSizecolumn img{
+    height: 15%;
+  }
+}
 .titleonhover{
  
   width: 80%;
@@ -1872,3 +1878,7 @@ RESERVATION SECTION
   width: 350px;
   height: 262px;
 }
+.rowsecond {
+  margin-top: 3%;
+  }
+ 
