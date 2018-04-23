@@ -13,6 +13,7 @@ var gallery = require('./routes/gallery');
 var details = require('./routes/details');
 var feed_back = require('./routes/feed_back');
 var URL = require('./routes/lang');
+var authen = require('./routes/authen');
 
 
 var app = express();
@@ -37,7 +38,7 @@ app.use('/gallery', gallery);
 app.use('/details', details);
 app.use('/feed_back', feed_back);
 app.use('/lang', URL);
-
+app.use('/admin', authen);
 
 app.use(session({
   secret: "secret",

@@ -90,7 +90,7 @@
 </head>
 
 <body>
-  <form action="/authen/" method="POST">
+  <form action="/admin/authen/" method="POST">
     <div class="login-form">
       <h1>ADMIN</h1>
       <div class="form-group ">
@@ -101,7 +101,9 @@
         <input type="password" class="form-control" placeholder="Password" name="pass_word" />
         <i class="fa fa-lock"></i>
       </div>
-      <span class="alert"><%= mess %></span>
+      <span class="alert">
+        <%= mess %>
+      </span>
       <button type="submit" class="log-btn">Log in</button>
     </div>
   </form>
