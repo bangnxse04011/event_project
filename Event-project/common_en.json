@@ -6,6 +6,7 @@
     "menu_contact": "Contact",
     "page_show_room": "Showroom",
     "customer_say": "Customers Idea?",
+    "view": "Views",
     "menu_login": [
         {
             "name": "Login",
@@ -57,7 +58,7 @@
             "name": "Furniture showroom.",
             "description": ""
         },
-        {
+        { 
             "name": "Graphic design.",
             "description": ""
         }
