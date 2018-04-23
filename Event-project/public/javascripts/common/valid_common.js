@@ -5,7 +5,7 @@ module.exports = {
      */
     valid_lang: (lang) => {
         let language = lang;
-        if (lang == null || lang == '' || lang == "") {
+        if (lang == null || lang == '' || lang == "" || (lang != 'vi' && lang != 'en')) {
             language = 'vi';
         }
         return language;
