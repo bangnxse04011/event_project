@@ -14,7 +14,7 @@ $(document).ready(function () {
                 $('#gallery').html(str);
             }
         }
-        xhttp.open("GET", "http://192.168.118.10:3000/gallery/" + language.trim());
+        xhttp.open("GET", "http://localhost:3000/gallery/" + language.trim());
         xhttp.send();
     } catch (e) {
         alert(e);

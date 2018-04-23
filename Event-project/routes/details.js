@@ -30,6 +30,7 @@ router.get('/:id', function (req, res, next) {
       tableshow = gallery_table_en;
     }
     req.session.lang = lang;
+    req.session.CUR_URl = '/details/' + id;
     let menu_data_file = fs.readFileSync(menu_file_name);
     var menu_data = JSON.parse(menu_data_file);
     // info_total_home_page total data view in homepage
@@ -40,10 +41,18 @@ router.get('/:id', function (req, res, next) {
         id: id
       }
     }).then(result => {
-      res.render(page_common.page_detail, { info_total_home_page: info_total_home_page, menu_data: menu_data, lang_session: lang, info: result });
+      // Find all data from table event
+      tableshow.findAll(
+        {
+          plain: false,
+          limit: 4
+        }
+      ).then(result_limit_6 => {
+        let gallery_details = result_limit_6.map((r) => (r.toJSON()));
+        res.render(page_common.page_detail, { info_total_home_page: info_total_home_page, menu_data: menu_data, lang_session: lang, info: result, gallery_details: gallery_details });
+      });
     })
   } catch (e) {
-    console.log(e);
     res.render(page_common.page_error);
   }
 });

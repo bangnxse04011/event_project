@@ -23,15 +23,15 @@
   <script src="/javascripts/index.js"></script>
   <script src="/javascripts/controllGallery.js"></script>
   <div id="fb-root"></div>
-    <script>
-        (function (d, s, id) {
-            var js, fjs = d.getElementsByTagName(s)[0];
-            if (d.getElementById(id)) return;
-            js = d.createElement(s); js.id = id;
-            js.src = 'https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v2.12&appId=418017485293597&autoLogAppEvents=1';
-            fjs.parentNode.insertBefore(js, fjs);
-        }(document, 'script', 'facebook-jssdk'));
-    </script>
+  <script>
+    (function (d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = 'https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v2.12&appId=418017485293597&autoLogAppEvents=1';
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+  </script>
 </head>
 
 <body>
@@ -98,10 +98,10 @@
             </li> -->
             <li>
               <div style="margin-top: 11px">
-                <a href="#">
+                <a href="/lang/en">
                   <img src="/stylesheets/img/coa.png" alt="" height="22px" width="42px">
                 </a>
-                <a href="#">
+                <a href="/lang/vi">
                   <img src="/stylesheets/img/covn.png" alt="" height="22px" width="42px">
                 </a>
               </div>
@@ -115,15 +115,15 @@
     <div class="container">
       <div class="row">
         <div class="col-md-8">
-         
+
           <div class="row ">
             <img width="700px" alt="img" src="/stylesheets/img/<%=info.path_img %>">
           </div>
           <div class="row rowsecond">
-              <h2>
-                <%=info.fullName %>
-              </h2>
-            </div>
+            <h2>
+              <%=info.fullName %>
+            </h2>
+          </div>
           <div class="row rowsecond">
             <div style="text-align: center;" class="col-sm-6">
               <p style="font-size: 20px">
@@ -131,7 +131,7 @@
                   <%=info.total_view %>
                 </span>
               </p>
-              Lượt xem
+              <%= menu_data.view %>
             </div>
             <div class="fb-share-button" data-href="https://vilucky.com/events/<%= info.id %>" data-layout="button_count" data-size="large"
               data-mobile-iframe="true">
@@ -148,50 +148,23 @@
           </div>
         </div>
         <div class="col-md-4 fixSizecolumn">
-      
-         
-          <div class="row ">
+
+          <% gallery_details.forEach(function(info) { %>
+            <div class="row rowsecond">
               <div class="col-md-6">
-                <a href="/details/">
-                  <img  src="/stylesheets/img/<%=info.path_img %>" alt="Smiley face" height="123.75px" width="100%">
+                <a href="/details/<%= info.id %>">
+                  <img src="/stylesheets/img/<%= info.path_img %>" alt="Smiley face" height="123.75px" width="100%">
                 </a>
               </div>
               <div class="col-md-6" style="line-height:200%;">
-                <a href="/details/">
+                <a href="/details/<%= info.id %>">
                   <span style="font-family: 'Times New Roman', Times, serif !important; font-size:18px;">
-                    Tỳ Mộc Đồng Tử: Ibaraki Doji [Tiêu điểm thức thần][Âm Dương Sư]
+                    <%= info.title %>
                   </span>
                 </a>
               </div>
             </div>
-          <div class="row rowsecond">
-              <div class="col-md-6">
-                <a href="/details/">
-                  <img  src="/stylesheets/img/<%=info.path_img %>" alt="Smiley face" height="123.75px" width="100%">
-                </a>
-              </div>
-              <div class="col-md-6" style="line-height:200%;">
-                <a href="/details/">
-                  <span style="font-family: 'Times New Roman', Times, serif !important; font-size:18px;">
-                    Tỳ Mộc Đồng Tử: Ibaraki Doji [Tiêu điểm thức thần][Âm Dương Sư]
-                  </span>
-                </a>
-              </div>
-            </div>
-          <div class="row rowsecond">
-            <div class="col-md-6">
-              <a href="/details/">
-                <img  src="/stylesheets/img/<%=info.path_img %>" alt="Smiley face" height="123.75px" width="100%">
-              </a>
-            </div>
-            <div class="col-md-6" style="line-height:200%;">
-              <a href="/details/">
-                <span style="font-family: 'Times New Roman', Times, serif !important; font-size:18px;">
-                  Tỳ Mộc Đồng Tử: Ibaraki Doji [Tiêu điểm thức thần][Âm Dương Sư]
-                </span>
-              </a>
-            </div>
-          </div>
+            <% }); %>
         </div>
       </div>
 
