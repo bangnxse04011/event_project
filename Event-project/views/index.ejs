@@ -219,6 +219,7 @@
                   </div>
                 </div>
               </div>
+              <!-- ----------------------------------------------------- -->
             </div>
           </div>
         </div>
@@ -264,7 +265,9 @@
 
               <div class="mu-title">
                 <!-- <span class="mu-subtitle">Phan hoi</span> -->
-                <h2>Khách hàng nói gì?</h2>
+                <h2>
+                  <%= menu_data.customer_say %>
+                </h2>
               </div>
 
               <!-- testimonial content -->
@@ -283,6 +286,7 @@
                   </li>
                 </ul>
               </div>
+              <!-- --------------------------------------------------- -->
             </div>
           </div>
         </div>
@@ -297,7 +301,9 @@
           <div class="mu-contact-area">
             <div class="mu-title">
               <!-- <span class="mu-subtitle">Get In Touch</span> -->
-              <h2>Liên hệ</h2>
+              <h2>
+                <%= menu_data.menu_contact %>
+              </h2>
             </div>
             <div class="mu-contact-content">
               <div class="row">
@@ -308,30 +314,35 @@
                     <!-- Start contact form -->
                     <form id="ajax-contact" method="post" action="mailer.php" class="mu-contact-form">
                       <div class="form-group">
-                        <label for="name">Họ Và Tên</label>
-                        <input type="text" class="form-control" id="name" name="name" placeholder="Họ Và Tên" required>
+                        <label for="name"><%= menu_data.contact[0].fullname %></label>
+                        <input type="text" class="form-control" id="name" name="name" placeholder="<%= menu_data.contact[0].fullname %>" required>
                       </div>
                       <div class="form-group">
-                        <label for="email">Địa Chị Email</label>
-                        <input type="email" class="form-control" id="email" name="email" placeholder="Địa Chị Email" required>
+                        <label for="email"><%= menu_data.contact[0].email %></label>
+                        <input type="email" class="form-control" id="email" name="email" placeholder="<%= menu_data.contact[0].email %>" required>
                       </div>
                       <div class="form-group">
-                        <label for="subject">Tiêu Đề</label>
-                        <input type="text" class="form-control" id="subject" name="subject" placeholder="Tiêu Đề" required>
+                        <label for="subject"><%= menu_data.contact[0].title %></label>
+                        <input type="text" class="form-control" id="subject" name="subject" placeholder="<%= menu_data.contact[0].title %>" required>
                       </div>
                       <div class="form-group">
-                        <label for="message">Nội Dung</label>
-                        <textarea class="form-control" id="message" name="message" cols="30" rows="10" placeholder="Nội Dung" required></textarea>
+                        <label for="message"><%= menu_data.contact[0].message %></label>
+                        <textarea class="form-control" id="message" name="message" cols="30" rows="10" placeholder="<%= menu_data.contact[0].message %>"
+                          required></textarea>
                       </div>
-                      <button type="submit" class="mu-send-btn">Gửi</button>
+                      <button type="submit" class="mu-send-btn"><%= menu_data.contact[0].value %></button>
                     </form>
                   </div>
                 </div>
                 <div class="col-md-6">
                   <div class="mu-contact-right">
                     <div class="mu-contact-widget">
-                      <h3>Địa Chỉ Công Ty</h3>
-                      <p>Km29, Đại lộ Thăng Long, Khu công nghệ cao Hòa Lạc, Trường ĐH FPT</p>
+                      <h3>
+                        <%= menu_data.details_company[0].my_address_title %>
+                      </h3>
+                      <p>
+                        <%= menu_data.details_company[0].company_address %>
+                      </p>
                       <address>
                         <p>
                           <i class="fa fa-phone"></i> (+84) 966189407</p>
@@ -342,14 +353,14 @@
                       </address>
                     </div>
                     <div class="mu-contact-widget">
-                      <h3>Khung Giờ Làm Việc</h3>
+                      <h3>
+                        <%= menu_data.details_company[0].time_work %>
+                      </h3>
                       <address>
                         <p>
-                          <span>Thứ Hai-Thứ Sáu</span> 8h đến 20h</p>
-                        <p>
-                          <span>Thứ Bảy</span> 8h đến 20h</p>
-                        <p>
-                          <span>Chủ Nhật</span> 8h đến 20h</p>
+                          <span><%= menu_data.details_company[0].time_work %></span>
+                          <%= menu_data.details_company[0].time_in_day %>
+                        </p>
                       </address>
                     </div>
                   </div>
@@ -364,8 +375,8 @@
   <!-- End Contact section -->
   <!-- Start Map section -->
   <section id="mu-map">
-    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d9207.358598888495!2d-85.64847801496286!3d30.183918972289003!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0000000000000000%3A0x2320479d70eb6202!2sDillard&#39;s!5e0!3m2!1sbn!2sbd!4v1462359735720"
-      width="100%" height="100%" frameborder="0" allowfullscreen></iframe>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3724.4824455659596!2d105.52510551522687!3d21.013373693678606!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x313454b32ca5086d%3A0xa3c62e29d8ab37e4!2sFPT+University!5e0!3m2!1sen!2s!4v1524470002430"
+      width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
   </section>
   <!-- End Map section -->
 

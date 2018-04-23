@@ -5,6 +5,7 @@
     "menu_collection": "Gallery",
     "menu_contact": "Contact",
     "page_show_room": "Showroom",
+    "customer_say": "Customers Idea?",
     "menu_login": [
         {
             "name": "Login",
@@ -73,6 +74,26 @@
         {
             "name": "Showroom",
             "href": "showroom"
+        }
+    ],
+    "contact": [
+        {
+            "fullname": "Your Name",
+            "email": "Email",
+            "title": "Subject",
+            "message": "Message",
+            "value": "Send"
+        }
+    ],
+    "details_company": [
+        {
+            "my_address_title": "Company Address:",
+            "company_address": "Street",
+            "phone": "(+84) 966.189.407",
+            "email": "contact@markups.io",
+            "time_work": "Time works:",
+            "word_day": "Monday - Friday",
+            "time_in_day": "8h - 20h"
         }
     ]
 }

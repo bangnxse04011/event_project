@@ -5,6 +5,7 @@
     "menu_collection": "Bộ Sưu Tập",
     "menu_contact": "Liên Hệ",
     "page_show_room": "Các mẫu hàng",
+    "customer_say": "Khách hàng nói gì?",
     "menu_login": [
         {
             "name": "Đăng Nhập",
@@ -49,7 +50,7 @@
             "description": ""
         },
         {
-            "name ": "Gian hàng triển lãm.",
+            "name": "Gian hàng triển lãm.",
             "description": ""
         },
         {
@@ -73,6 +74,26 @@
         {
             "name": "Showroom",
             "href": "showroom"
+        }
+    ],
+    "contact": [
+        {
+            "fullname": "Họ Và Tên",
+            "email": "Địa Chỉ Email",
+            "title": "Tiêu Đề",
+            "message": "Nội Dung",
+            "value": "Gửi"
+        }
+    ],
+    "details_company": [
+        {
+            "my_address_title": "Địa Chỉ Công Ty:",
+            "company_address": "Km29, Đại lộ Thăng Long, Khu công nghệ cao Hòa Lạc, Trường ĐH FPT",
+            "phone": "(+84) 966.189.407",
+            "email": "contact@markups.io",
+            "time_work": "Khung giờ làm việc:",
+            "word_day": "Thứ 2 đến Thứ 6",
+            "time_in_day": "8h - 20h"
         }
     ]
 }
