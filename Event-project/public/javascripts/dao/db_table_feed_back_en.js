@@ -10,7 +10,7 @@ const Feed_back_en = connection_db.define('feed_back_en', {
     status: { type: Sequelize.INTEGER }
 });
 
-Feed_back_en.sync();
+// Feed_back_en.sync();
 
 module.exports = Feed_back_en;
 
