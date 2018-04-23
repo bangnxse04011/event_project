@@ -17,6 +17,7 @@ router.get('/', function (req, res, next) {
     let lang_session = req.session.lang;
     // Check lang is null
     let language = valid_common.valid_lang(lang_session);
+    req.session.CUR_URl = '/' + language;
     res.redirect('/gallery/' + language);
 });
 
@@ -32,6 +33,7 @@ router.get('/:lang', function (req, res, next) {
         // Add lang to session
         req.session.lang = language;
         // Check lang vi or en
+        req.session.CUR_URl = '/' + language;
         if (language == 'vi') {
             db_gallery_vi.findAll(
                 {

@@ -16,6 +16,7 @@ router.get('/', function (req, res, next) {
     // Check lang is null
     let language = valid_common.valid_lang(lang_session);
     // req.session.lang = language;
+    req.session.CUR_URl = '/' + language;
     res.redirect('/' + language);
   } catch (e) {
     res.render(page_common.page_error);
@@ -31,6 +32,7 @@ router.get('/:lang', function (req, res, next) {
     let title = title_common.title_home_vi;
     let logo_name = info_common.logo_name_vi;
     let menu_file_name = "common_vi.json";
+    req.session.CUR_URl = '/' + lang;
     if (lang == null || lang == '' || lang == "") {
       lang = 'vi';
     } else if (lang == 'en') {

@@ -19,6 +19,7 @@ router.get('/', function (req, res, next) {
     let event = req.session.events;
     let language = valid_common.valid_lang(lang_session);
     let events = valid_common.valid_lang(event);
+    req.session.CUR_URl = '/events/' + language + "/" + events;
     res.redirect('/events/' + language + "/" + events);
 });
 
@@ -42,6 +43,7 @@ router.get('/:lang/:event', function (req, res, next) {
             status = events_dao.Showroom;
         }
         req.session.events = events;
+        req.session.CUR_URl = '/' + language + "/" + events;
         if (language == 'vi') {
             db_events_vi.findAll(
                 {

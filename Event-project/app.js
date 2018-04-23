@@ -12,6 +12,7 @@ var users = require('./routes/users');
 var gallery = require('./routes/gallery');
 var details = require('./routes/details');
 var feed_back = require('./routes/feed_back');
+var URL = require('./routes/lang');
 
 
 var app = express();
@@ -27,18 +28,19 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, '/public')));
-app.use(session({secret: 'ssshhhhh'}));
+app.use(session({ secret: 'ssshhhhh' }));
 
 app.use('/', index);
 app.use('/events', events);
 app.use('/users', users);
-app.use('/gallery',gallery);
-app.use('/details',details);
-app.use('/feed_back',feed_back);
+app.use('/gallery', gallery);
+app.use('/details', details);
+app.use('/feed_back', feed_back);
+app.use('/lang', URL);
 
 
 app.use(session({
-  secret : "secret",
+  secret: "secret",
   saveUninitialized: true,
   resave: true
 }))

@@ -16,7 +16,7 @@ const Event_demo_vi = connection_db.define('event_demo_vi', {
     date: { type: Sequelize.DATE }
 });
 
-// Event_demo_vi.sync();
+Event_demo_vi.sync();
 
 module.exports = Event_demo_vi;
 
