@@ -27,10 +27,8 @@ router.post('/authen', function (req, res, next) {
             pass_word: pass_word
         }
     }).then(info => {
-        console.log("----------------------------------------------");
-        console.log(info);
         if (info == null || info == '' || info == "") {
-            res.render(page_common.page_error);
+            res.redirect('/admin/login');
         }
         let account_details = info.dataValues;
         req.session.status = account_details['role']
