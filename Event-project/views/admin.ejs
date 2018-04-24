@@ -8,6 +8,7 @@
 <meta property="og:description" content="Mic on là một chương trình nhằm tìm kiếm, thu hút và thỏa mãn các tài năng trẻ trong lĩnh vực âm nhạc, FPTU - Melody Club và Gác Xép Band đồng tổ chức dưới sự tài trợ của nhãn hàng TH True Milk và PDP khối phổ thông FPT. ">
 <meta property="og:title" content="MICONSHOW">
 <meta property="og:image" content="https://miconshow.com/img/1.jpg">
+<link href="/stylesheets/assets/css/bootstrap.css" rel="stylesheet">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="/javascripts/management_delete.js"></script>
@@ -17,7 +18,7 @@
     <h2 class="w3-opacity">Admin</h2>
   </div>
 
-  <div class="container w3-bar w3-green">
+  <div class="container  w3-green">
 
     <button class="w3-bar-item w3-button w3-large" onclick="location.href='/'">
       <%= menu_data.menu_homepage %>
@@ -47,7 +48,7 @@
   </div>
 
   <div class="container">
-    <div id="upload_event" class="container w3-display-container city">
+    <div id="upload_event" class=" w3-display-container city">
       <form class="w3-container w3-card-4 " action="/admin-home/add_event/gallary" method="POST" enctype="multipart/form-data">
         <h1 style="text-shadow:1px 1px 0 #444">
           <%= menu_data.post_event_admin %>
