@@ -5,9 +5,7 @@
 </title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta property="og:description" content="Mic on là một chương trình nhằm tìm kiếm, thu hút và thỏa mãn các tài năng trẻ trong lĩnh vực âm nhạc, FPTU - Melody Club và Gác Xép Band đồng tổ chức dưới sự tài trợ của nhãn hàng TH True Milk và PDP khối phổ thông FPT. ">
-<meta property="og:title" content="MICONSHOW">
-<meta property="og:image" content="https://miconshow.com/img/1.jpg">
+
 <link href="/stylesheets/assets/css/bootstrap.css" rel="stylesheet">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -165,7 +163,7 @@
         <br/>
         <br/>
         <div id='loadDataGalleryEdit'>
-        
+
         </div>
         </br>
         <input class="w3-button w3-green" type="submit" value="Chỉnh sửa">
@@ -178,43 +176,51 @@
           Chỉnh sửa bài
         </h1>
         <div class="w3-dropdown-hover">
-          <select class="w3-button w3-card-4" name="gallary">
-            <option value="0">Đăng Sự Kiện </option>
-            <option value="1">Đăng Triển lãm </option>
-            <option value="2">Đăng Showrom </option>
+          <select class="w3-button w3-card-4" id="post_edit_type" name="gallary">
+              <option value="">Chọn kiểu sửa</option>
+            <option value="0">Sửa Sự Kiện </option>
+            <option value="1">Sửa Triển lãm </option>
+            <option value="2">Sửa Showrom </option>
           </select>
         </div>
         <div class="w3-dropdown-hover">
-          <select class="w3-button w3-card-4" name="lang_add">
-            <option value="en">Đăng Tiếng Anh </option>
-            <option value="vi">Đăng Tiếng Việt </option>
+          <select class="w3-button w3-card-4" id="post_edit_lang" name="lang_add">
+              <option value="">Chọn ngôn ngữ </option>
+            <option value="en">Sửa Tiếng Anh </option>
+            <option value="vi">Sửa Tiếng Việt </option>
+          </select>
+        </div>
+        <div class="w3-dropdown-hover">
+          <select class="w3-button w3-card-4" id='post_edit_showroom' name="lang_add">
+            <option value="">Chọn bài cần sửa </option>
           </select>
         </div>
         <br/>
         <br/>
-        <p>
-          <label>Tiêu đề</label>
-          <input class="w3-input" type="text" name="title" />
-        </p>
-        <p>
-          <label>Giá</label>
-          <input class="w3-input" type="number" name="price" />
-        </p>
-        <p>
-          <label>Địa chỉ</label>
-          <input class="w3-input" type="text" name="address" />
-        </p>
-        <label>Miêu tả </label>
-        <textarea class="w3-input" placeholder="Write something.." name="description" /></textarea>
-        </br>
-        <label>Ngày tổ chức sự kiện</label>
-        <input type="date" class="w3-input" placeholder="Write something.." name="date" />
-        </br>
-        <label>Chọn Ảnh</label>
-        <input type="file" class="w3-input" placeholder="Write something.." name="files" />
+      <div id='loadDataEditShowRoow'>
+          <p>
+              <label>Tiêu đề</label>
+              <input class="w3-input" type="text" name="title" />
+            </p>
+            <p>
+              <label>Giá</label>
+              <input class="w3-input" type="number" name="price" />
+            </p>
+            <p>
+              <label>Địa chỉ</label>
+              <input class="w3-input" type="text" name="address" />
+            </p>
+            <label>Miêu tả </label>
+            <textarea class="w3-input" placeholder="Write something.." name="description" /></textarea>
+            </br>
+            <label>Ngày tổ chức sự kiện</label>
+            <input type="date" class="w3-input" placeholder="Write something.." name="date" />
+            </br>
+            <label>Chọn Ảnh</label>
+            <input type="file" class="w3-input" placeholder="Write something.." name="files" />
+      </div>
         </br>
         <input class="w3-button w3-green" type="submit" value="Đăng">
-        </p>
       </form>
     </div>
     <div id="delete" class=" w3-display-container city" style="display:none">
