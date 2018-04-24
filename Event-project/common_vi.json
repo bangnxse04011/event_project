@@ -6,11 +6,12 @@
     "menu_contact": "Liên Hệ",
     "page_show_room": "Các mẫu hàng",
     "customer_say": "Khách hàng nói gì?",
-    "view" : "Lượt xem",
-    "post_event_admin":"Đăng Bài Sự Kiện",
-    "post_gallery_admin":"Đăng Bài Sưu Tập",
-    "edit_post":"Chỉnh sửa - Xóa",
-    "logout":"Đăng Xuất"    ,
+    "view": "Lượt xem",
+    "post_event_admin": "Đăng Bài Sự Kiện",
+    "post_gallery_admin": "Đăng Bài Sưu Tập",
+    "edit_post": "Chỉnh sửa",
+    "edit_delete": "Xóa",
+    "logout": "Đăng Xuất",
     "menu_login": [
         {
             "name": "Đăng Nhập",
@@ -26,21 +27,21 @@
     "info": [
         {
             "name": "Tốc Độ",
-            "details": "Thi công thiết kế gian hàng triển lãm hội chợ tốc độ.",
+            "details": "Thi công thiết kế gian hàng triển lãm tốc độ.",
             "link": "/stylesheets/assets/img/slider/1.jpeg",
-            "alt": "Thi công thiết kế gian hàng triển lãm hội chợ tốc độ."
+            "alt": "Thi công thiết kế gian hàng triển lãm tốc độ."
         },
         {
             "name": "Chuyên Nghiệp",
-            "details": "Thi công thiết kế gian hàng triển lãm hội chợ chuyên nghiệp.",
+            "details": "Thi công thiết kế gian hàng triển lãm chuyên nghiệp.",
             "link": "/stylesheets/assets/img/slider/2.jpeg",
-            "alt": "Thi công thiết kế gian hàng triển lãm hội chợ chuyên nghiệp."
+            "alt": "Thi công thiết kế gian hàng triển lãm chuyên nghiệp."
         },
         {
             "name": "Chất lượng",
-            "details": "Thi công thiết kế gian hàng triển lãm hội chợ chất lượng.",
+            "details": "Thi công thiết kế gian hàng triển lãm chất lượng.",
             "link": "/stylesheets/assets/img/slider/3.jpeg",
-            "alt": "Thi công thiết kế gian hàng triển lãm hội chợ chất lượng."
+            "alt": "Thi công thiết kế gian hàng triển lãm chất lượng."
         }
     ],
     "info_company": [

@@ -27,8 +27,6 @@ router.post('/authen', function (req, res, next) {
             pass_word: pass_word
         }
     }).then(info => {
-        console.log("-----------------------------------------------");
-        console.log(info);
         if (info == null || info == '' || info == "") {
             res.redirect('/admin/login');
         } else {

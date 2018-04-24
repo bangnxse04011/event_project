@@ -126,6 +126,9 @@ router.post('/add_event/:type', function (req, res, next) {
     }
 });
 
+/**
+ * Method find all data
+ */
 router.get('/find_all', function (req, res, next) {
     let user = req.session.user_login_okie;
     if (user == null || user == '' || user == "") {
@@ -153,10 +156,13 @@ router.get('/find_all', function (req, res, next) {
         }).catch(function (err) {
             res.render(page.page_error);
         });
-
     }
 });
 
+
+/**
+ * Method find delete post by id
+ */
 router.get('/delete_post', function (req, res, next) {
     let user = req.session.user_login_okie;
     if (user == null || user == '' || user == "") {
@@ -194,4 +200,9 @@ router.get('/delete_post', function (req, res, next) {
     res.redirect("/admin-home/home");
 });
 
+/**
+ * Method update data
+ */
+
+ 
 module.exports = router;

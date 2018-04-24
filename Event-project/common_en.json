@@ -6,10 +6,11 @@
     "menu_contact": "Contact",
     "page_show_room": "Showroom",
     "customer_say": "Customers Idea?",
-    "post_event_admin":"Post Event",
-    "post_gallery_admin":"Post Gallery",
-    "edit_post":"Edit - Delete",
-    "logout":"Đăng Xuất",
+    "post_event_admin": "Post Event",
+    "post_gallery_admin": "Post Gallery",
+    "edit_post": "Edit",
+    "edit_delete": "Delete",
+    "logout": "Đăng Xuất",
     "view": "Views",
     "menu_login": [
         {
@@ -62,7 +63,7 @@
             "name": "Furniture showroom.",
             "description": ""
         },
-        { 
+        {
             "name": "Graphic design.",
             "description": ""
         }
