@@ -72,11 +72,9 @@ router.post('/add_event/:type', function (req, res, next) {
             //     return;
             // }
             let type = req.params.type;
-            console.log(type + "---------------type-----------------------------");
             // Check type and lang
             if (type == 'event') {
                 collection_value = fields.gallary;
-                console.log(collection_value + "--------------------------collection_value------------------");
                 if (checklang == 'en') {
                     table_event = table_collection_en;
                 } else {
