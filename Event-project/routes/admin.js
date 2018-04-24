@@ -12,11 +12,16 @@ const table_event_en = require('../public/javascripts/dao/db_table_event_demo_en
 const table_event_vi = require('../public/javascripts/dao/db_table_event_demo_vi');
 const table_collection_en = require('../public/javascripts/dao/db_table_collection_en');
 const table_collection_vi = require('../public/javascripts/dao/db_table_collection_vi');
-
+const table_gallery_vi = require('../public/javascripts/dao/db_table_collection_vi');
+const table_gallery_en = require('../public/javascripts/dao/db_table_collection_en');
 /**
  * Method home page
  */
 router.get('/home', function (req, res, next) {
+    let user = req.session.user_login_okie;
+    if (user == null || user == '' || user == "") {
+        res.render(page_common.page_login, { mess: 'Please login' });
+    }
     try {
         // Get language view
 
@@ -45,6 +50,10 @@ router.get('/home', function (req, res, next) {
  * add Event
  */
 router.post('/add_event/:type', function (req, res, next) {
+    let user = req.session.user_login_okie;
+    if (user == null || user == '' || user == "") {
+        res.render(page_common.page_login, { mess: 'Please login' });
+    }
     try {
         var form = new formidable.IncomingForm();
         let path = __dirname;
@@ -116,9 +125,12 @@ router.post('/add_event/:type', function (req, res, next) {
         res.render(page_common.page_error);
     }
 });
-const table_gallery_vi = require('../public/javascripts/dao/db_table_collection_vi');
-const table_gallery_en = require('../public/javascripts/dao/db_table_collection_en');
+
 router.get('/find_all', function (req, res, next) {
+    let user = req.session.user_login_okie;
+    if (user == null || user == '' || user == "") {
+        res.render(page_common.page_login, { mess: 'Please login' });
+    }
     let event = req.query.change;
     if (event == null || event == '' || event == "") {
         res.render(page.page_error);
@@ -144,7 +156,12 @@ router.get('/find_all', function (req, res, next) {
 
     }
 });
+
 router.get('/delete_post', function (req, res, next) {
+    let user = req.session.user_login_okie;
+    if (user == null || user == '' || user == "") {
+        res.render(page_common.page_login, { mess: 'Please login' });
+    }
     var id_delete = req.query.id_delete;
     var event = req.query.type;
     // var uname_session = req.session.user_login_okie;
@@ -176,4 +193,5 @@ router.get('/delete_post', function (req, res, next) {
     }
     res.redirect("/admin-home/home");
 });
+
 module.exports = router;
