@@ -27,6 +27,8 @@ router.post('/authen', function (req, res, next) {
             pass_word: pass_word
         }
     }).then(info => {
+        console.log("-----------------------------------------------");
+        console.log(info);
         if (info == null || info == '' || info == "") {
             res.redirect('/admin/login');
         }
@@ -59,4 +61,14 @@ router.get('/login', function (req, res, next) {
     }
 });
 
+
+/**
+ * Method logout
+ */
+
+router.get('/log_out', function (req, res, next) {
+    delete req.session.user_login_okie;
+    delete req.session.status
+    res.redirect('/admin/login');
+});
 module.exports = router;
