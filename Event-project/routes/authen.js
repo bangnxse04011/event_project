@@ -31,11 +31,12 @@ router.post('/authen', function (req, res, next) {
         console.log(info);
         if (info == null || info == '' || info == "") {
             res.redirect('/admin/login');
+        } else {
+            let account_details = info.dataValues;
+            req.session.status = account_details['role']
+            req.session.user_login_okie = user_name;
+            res.redirect('/admin-home/home');
         }
-        let account_details = info.dataValues;
-        req.session.status = account_details['role']
-        req.session.user_login_okie = user_name;
-        res.redirect('/admin-home/home');
     }).catch(function (e) {
         console.log(e);
         res.render(page_common.page_error);
