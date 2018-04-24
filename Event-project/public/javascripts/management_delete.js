@@ -7,11 +7,11 @@ $(document).ready(function () {
         let data = $('#link_video').val();
         $('#id_delete').val(data);
         $('#type').val($('#type_edit').val());
-        
+
     });
     $('#type_edit').change(function () {
         var change = $('#type_edit').val();
-      
+
         var list_event;
         var xhttp = new XMLHttpRequest();
         xhttp.onreadystatechange = function () {
@@ -25,8 +25,8 @@ $(document).ready(function () {
                 $('#link_video').html(str);
             }
         }
-        xhttp.open("GET", "http://localhost:3000/admin-home/find_all?change="+change);
+        xhttp.open("GET", "http://150.95.109.217/admin-home/find_all?change=" + change);
         xhttp.send();
-        
+
     });
-    });
+});

@@ -12,6 +12,7 @@
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="/javascripts/management_delete.js"></script>
+
 <body>
 
   <div class="container w3-center w3-panel w3-green">
@@ -60,7 +61,7 @@
             <option value="vi">Đăng Tiếng Việt </option>
           </select>
         </div>
-
+        <br/><br/>
         <p>
           <label>Tiêu đề</label>
           <input class="w3-input" type="text" name="title" />
@@ -105,6 +106,7 @@
             <option value="vi">Đăng Tiếng Việt </option>
           </select>
         </div>
+        <br/><br/>
         <p>
           <label>Tiêu đề</label>
           <input class="w3-input" type="text" name="title" />
@@ -132,34 +134,30 @@
     </div>
     <div id="delete" class="container w3-display-container city" style="display:none">
       <!-- <form class="w3-container w3-card-4 " action="/admin/add_cd_vilucky" method="POST" enctype="multipart/form-data"> -->
-        <h1 style="text-shadow:1px 1px 0 #444">Chỉnh sửa</h1>
-        <input type="text" id="id_video" hidden />
-        <p>
+      <h1 style="text-shadow:1px 1px 0 #444">Chỉnh sửa</h1>
+      <input type="text" id="id_video" hidden />
 
-          <div class="w3-dropdown-hover">
-            <select class="w3-button w3-card-4" id="type_edit">
-              <option value="">--Chọn kiểu xóa--</option>            
-              <option value="event">Xóa mẫu hàng</option>
-              <option value="gallery">Xóa bài bộ sưu tập</option>
-            </select>
-          </div>
-        </p>
-        <p>
+      <div class="w3-dropdown-hover">
+        <select class="w3-button w3-card-4" id="type_edit">
+          <option value="">--Chọn kiểu xóa--</option>
+          <option value="event">Xóa mẫu hàng</option>
+          <option value="gallery">Xóa bài bộ sưu tập</option>
+        </select>
+      </div>
+      <div class="w3-dropdown-hover">
+        <select class="w3-button w3-card-4" id="link_video">
+          <option value="">--Chọn bài cần sửa--</option>
+        </select>
+      </div>
 
-          <div class="w3-dropdown-hover">
-            <select class="w3-button w3-card-4" id="link_video">
-              <option value="">--Chọn bài cần sửa--</option>
-            </select>
-          </div>
-        </p>
-        <p>
-
-          <br/>
-          <form class="w3-container w3-card-4" action="/admin-home/delete_post" method="GET">
-            <input id="id_delete" class="w3-button w3-green" type="hidden" value="" name="id_delete" />
-            <input id="type" class="w3-button w3-green" type="hidden" value="" name="type" />
-            <input class="w3-button w3-green" type="submit" value="Xóa bài này">
-          </form>
+      <br/>
+      <br/>
+      <br/>
+      <form class="w3-container w3-card-4" action="/admin-home/delete_post" method="GET">
+        <input id="id_delete" class="w3-button w3-green" type="hidden" value="" name="id_delete" />
+        <input id="type" class="w3-button w3-green" type="hidden" value="" name="type" />
+        <input class="w3-button w3-green" type="submit" value="Xóa bài này">
+      </form>
 
     </div>
   </div>
