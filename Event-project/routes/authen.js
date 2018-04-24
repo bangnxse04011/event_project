@@ -56,7 +56,7 @@ router.get('/login', function (req, res, next) {
         if (user == null || user == '' || user == "") {
             res.render(page_common.page_login, { mess: 'Please login' });
         } else {
-            res.render(page_common.page_admin, { user_login: user_name });
+            res.redirect('/admin-home/home');
         }
     } catch (e) {
         res.redirect('/admin/login');
