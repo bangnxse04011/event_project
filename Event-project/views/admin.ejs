@@ -10,7 +10,7 @@
 <meta property="og:image" content="https://miconshow.com/img/1.jpg">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-
+<script src="/javascripts/management_delete.js"></script>
 <body>
 
   <div class="container w3-center w3-panel w3-green">
@@ -130,16 +130,16 @@
       </form>
     </div>
     <div id="delete" class="container w3-display-container city" style="display:none">
-      <form class="w3-container w3-card-4 " action="/admin/add_cd_vilucky" method="POST" enctype="multipart/form-data">
+      <!-- <form class="w3-container w3-card-4 " action="/admin/add_cd_vilucky" method="POST" enctype="multipart/form-data"> -->
         <h1 style="text-shadow:1px 1px 0 #444">Chỉnh sửa</h1>
         <input type="text" id="id_video" hidden />
         <p>
 
           <div class="w3-dropdown-hover">
             <select class="w3-button w3-card-4" id="type_edit">
-              <option value="">--Chọn kiểu chỉnh sửa--</option>
-              <option value="event">Chỉnh sửa chiến dịch</option>
-              <option value="community">Chỉnh sửa cộng đồng</option>
+              <option value="">--Chọn kiểu xóa--</option>            
+              <option value="event">Xóa mẫu hàng</option>
+              <option value="gallery">Xóa bài bộ sưu tập</option>
             </select>
           </div>
         </p>
@@ -154,7 +154,7 @@
         <p>
 
           <br/>
-          <form class="w3-container w3-card-4" action="/admin/delete_post" method="GET">
+          <form class="w3-container w3-card-4" action="/admin-home/delete_post" method="GET">
             <input id="id_delete" class="w3-button w3-green" type="hidden" value="" name="id_delete" />
             <input id="type" class="w3-button w3-green" type="hidden" value="" name="type" />
             <input class="w3-button w3-green" type="submit" value="Xóa bài này">

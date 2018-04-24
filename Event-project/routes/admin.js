@@ -116,5 +116,64 @@ router.post('/add_event/:type', function (req, res, next) {
         res.render(page_common.page_error);
     }
 });
+const table_gallery_vi = require('../public/javascripts/dao/db_table_collection_vi');
+const table_gallery_en = require('../public/javascripts/dao/db_table_collection_en');
+router.get('/find_all', function (req, res, next) {
+    let event = req.query.change;
+    if (event == null || event == '' || event == "") {
+        res.render(page.page_error);
+    }
+    if (event == 'event') {
+        table_event_vi.findAll({
+            plain: false
+        }).then(video => {
+            let video_array = video.map((r) => (r.toJSON()));
+            res.end(JSON.stringify(video_array));
+        }).catch(function (err) {
+            res.render(page.page_error);
+        });
+    } else {
+        table_gallery_vi.findAll({
+            plain: false
+        }).then(video => {
+            let video_array = video.map((r) => (r.toJSON()));
+            res.end(JSON.stringify(video_array));
+        }).catch(function (err) {
+            res.render(page.page_error);
+        });
 
+    }
+});
+router.get('/delete_post', function (req, res, next) {
+    var id_delete = req.query.id_delete;
+    var event = req.query.type;
+    // var uname_session = req.session.user_login_okie;
+    // if (uname_session == null || uname_session == '' || uname_session == "") {
+    //     res.redirect('/admin-home/home/');
+    // }
+    if (event == 'event') {
+        table_event_en.destroy({
+            where: {
+                id: id_delete,
+            }
+        });
+        table_event_vi.destroy({
+            where: {
+                id: id_delete,
+            }
+        });
+    } else {
+        table_gallery_en.destroy({
+            where: {
+                id: id_delete,
+            }
+        });
+        table_gallery_vi.destroy({
+            where: {
+                id: id_delete,
+            }
+        });
+    }
+    res.redirect("/admin-home/home");
+});
 module.exports = router;
