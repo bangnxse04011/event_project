@@ -5,16 +5,19 @@ const title_common = require('../public/javascripts/common/title_common');
 const info_common = require('../public/javascripts/common/info_common');
 const page_common = require('../public/javascripts/common/page_common');
 const valid_common = require('../public/javascripts/common/valid_common');
+/**
+ * Method home page
+ */
 router.get('/home', function (req, res, next) {
     try {
         // Get language view
-       
+
         let lang = req.session.lang;
         // Default language vi
         let title = title_common.title_home_vi;
         let logo_name = info_common.logo_name_vi;
         let menu_file_name = "common_vi.json";
-        
+
         req.session.CUR_URl = '/' + lang;
         if (lang == null || lang == '' || lang == "") {
             lang = 'vi';
@@ -80,4 +83,5 @@ router.post('/add_event', function (req, res, next) {
     });
     return;
 });
+
 module.exports = router;

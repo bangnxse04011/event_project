@@ -14,7 +14,7 @@ const Account = connection_db.define('account', {
     role: { type: Sequelize.INTEGER }
 });
 
-Account.sync();
+// Account.sync();
 
 module.exports = Account;
 

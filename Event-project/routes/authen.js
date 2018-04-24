@@ -27,12 +27,26 @@ router.post('/authen', function (req, res, next) {
             pass_word: pass_word
         }
     }).then(info => {
+        console.log("----------------------------------------------");
+        console.log(info);
+        if (info == null || info == '' || info == "") {
+            res.render(page_common.page_error);
+        }
+        let account_details = info.dataValues;
+        req.session.status = account_details['role']
         req.session.user_login_okie = user_name;
-        // res.render(page_common.page_admin);
+        res.redirect('/admin-home/home');
     }).catch(function (e) {
         console.log(e);
-        res.render('error');
+        res.render(page_common.page_error);
     });
+});
+
+/**
+ * Method login method get(F5 browser)
+ */
+router.get('/authen', function (req, res, next) {
+    res.redirect('/admin/login');
 });
 
 /**
@@ -43,7 +57,7 @@ router.get('/login', function (req, res, next) {
     if (user == null || user == '' || user == "") {
         res.render(page_common.page_login, { mess: 'Please login' });
     } else {
-        res.render(page_common.page_admin);
+        res.render(page_common.page_admin, { user_login: user_name });
     }
 });
 

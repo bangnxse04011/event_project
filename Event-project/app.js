@@ -15,6 +15,8 @@ var feed_back = require('./routes/feed_back');
 var URL = require('./routes/lang');
 var authen = require('./routes/authen');
 var events_details = require('./routes/event_details');
+var admin_home = require('./routes/admin');
+
 
 
 var app = express();
@@ -40,6 +42,7 @@ app.use('/details', details);
 app.use('/feed_back', feed_back);
 app.use('/lang', URL);
 app.use('/admin', authen);
+app.use('/admin-home', admin_home);
 app.use('/events-details', events_details);
 
 app.use(session({
