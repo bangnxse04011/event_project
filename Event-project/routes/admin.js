@@ -1,4 +1,3 @@
-
 const express = require('express');
 const router = express.Router();
 const fs = require("fs");
@@ -44,62 +43,65 @@ router.get('/home', function (req, res, next) {
  * add Event
  */
 router.post('/add_event', function (req, res, next) {
-    var form = new formidable.IncomingForm();
-    let path = __dirname;
-    var table_event = null;
-    path = path.replace('routes', '');
+    try {
+        var form = new formidable.IncomingForm();
+        let path = __dirname;
+        var table_event = null;
+        path = path.replace('routes', '');
 
-    form.uploadDir = path + '/public/stylesheets/img/';
-
-
-    form.parse(req, function (err, fields, file) {
-
-        var titlee = fields.title;
-        var price = fields.price;
-        var address = fields.address;
-        var description = fields.description;
-        var date = fields.date;
-        var checklang = fields.lang_add;
-        // Get input
+        form.uploadDir = path + '/public/stylesheets/img/';
 
 
-        let check_titlee = funtion_helper.valid_input(titlee);
-        let check_price = funtion_helper.valid_input(price);
-        let check_address = funtion_helper.valid_input(address);
-        let check_description = funtion_helper.valid_input(description);
-        let check_date = funtion_helper.valid_input(date);
-        let check_checklang = funtion_helper.valid_input(checklang);
-        // check null
-        if (check_price == false || check_titlee == false || check_address == false || check_description == false || check_date == false || check_titlee == false || check_checklang == false) {
-            res.render(page.page_error);
-        }
-        if (checklang == 'en') {
-            table_event = table_event_en;
-        } else {
-            table_event = table_event_vi;
-        }
-        let path_name = file.files.name.split('.');
-        let new_name_file = uuidv1() + '.' + path_name[1];
-        //path tmp trên server
-        var path = file.files.path;
-        //thiết lập path mới cho file
-        var newpath = form.uploadDir + new_name_file;
-        fs.rename(path, newpath, function (err) {
-            if (err) throw err;
-            table_event.create({
-                fullName: titlee,
-                title: titlee,
-                address: address,
-                description: description,
-                path_img: new_name_file,
-                status: 0,
-                price: price,
-                date: date
+        form.parse(req, function (err, fields, file) {
+
+            var titlee = fields.title;
+            var price = fields.price;
+            var address = fields.address;
+            var description = fields.description;
+            var date = fields.date;
+            var checklang = fields.lang_add;
+            // Get input
+            let check_titlee = funtion_helper.valid_input(titlee);
+            let check_price = funtion_helper.valid_input(price);
+            let check_address = funtion_helper.valid_input(address);
+            let check_description = funtion_helper.valid_input(description);
+            let check_date = funtion_helper.valid_input(date);
+            let check_checklang = funtion_helper.valid_input(checklang);
+            // check null
+            if (check_price == false || check_titlee == false || check_address == false || check_description == false || check_date == false || check_titlee == false || check_checklang == false) {
+                res.render(page.page_error);
+            }
+            if (checklang == 'en') {
+                table_event = table_event_en;
+            } else {
+                table_event = table_event_vi;
+            }
+            let path_name = file.files.name.split('.');
+            let new_name_file = uuidv1() + '.' + path_name[1];
+            //path tmp trên server
+            var path = file.files.path;
+            //thiết lập path mới cho file
+            var newpath = form.uploadDir + new_name_file;
+            fs.rename(path, newpath, function (err) {
+                if (err) throw err;
+                table_event.create({
+                    fullName: titlee,
+                    title: titlee,
+                    address: address,
+                    description: description,
+                    path_img: new_name_file,
+                    status: 0,
+                    price: price
+                    // date: date
+                })
+                res.redirect('/admin-home/home');
             });
-            res.redirect('/admin-home/home');
+
         });
-    });
-    return;
+    } catch (e) {
+        console.log("------------------------------");
+        console.log(e);
+    }
 });
 
 module.exports = router;
