@@ -8,8 +8,6 @@ router.get('/:lang', function (req, res, next) {
     let lang = req.params['lang'];
     // Get URL in session
     let URL = req.session.CUR_URl;
-    console.log("----------aaaaaaaaaaaaaaaaaaaaaa--------------------");
-    console.log(URL);
     // Valid check case URL null
     if (URL == null || URL == '' || URL == "") {
         URL = 'vi';
@@ -22,8 +20,6 @@ router.get('/:lang', function (req, res, next) {
             URL = URL.replace('/vi', '/en');
         }
     }
-    console.log("------------------------------");
-    console.log(URL);
     res.redirect(URL);
 });
 
