@@ -1,10 +1,17 @@
+
 const express = require('express');
 const router = express.Router();
 const fs = require("fs");
+var formidable = require('formidable');
 const title_common = require('../public/javascripts/common/title_common');
 const info_common = require('../public/javascripts/common/info_common');
 const page_common = require('../public/javascripts/common/page_common');
 const valid_common = require('../public/javascripts/common/valid_common');
+const funtion_helper = require('../public/javascripts/common/helper');
+const uuidv1 = require('uuid/v1');
+const table_event_en = require('../public/javascripts/dao/db_table_event_demo_en');
+const table_event_vi = require('../public/javascripts/dao/db_table_event_demo_vi');
+
 /**
  * Method home page
  */
@@ -39,27 +46,38 @@ router.get('/home', function (req, res, next) {
 router.post('/add_event', function (req, res, next) {
     var form = new formidable.IncomingForm();
     let path = __dirname;
+    var table_event = null;
     path = path.replace('routes', '');
-    form.uploadDir = path + '/public/stylesheets/images/';
+
+    form.uploadDir = path + '/public/stylesheets/img/';
+
+
     form.parse(req, function (err, fields, file) {
-        var name = fields.name;
+
         var titlee = fields.title;
-        var des_n = fields.description_n;
-        var des_d = fields.description_d;
-        var goal = fields.goal;
-
+        var price = fields.price;
+        var address = fields.address;
+        var description = fields.description;
+        var date = fields.date;
+        var checklang = fields.lang_add;
         // Get input
-        let check_name = funtion_helper.valid_input(name);
-        let check_titlee = funtion_helper.valid_input(titlee);
-        let check_des_n = funtion_helper.valid_input(des_n);
-        let check_des_d = funtion_helper.valid_input(des_d);
-        let check_goal = funtion_helper.valid_input(goal);
 
+
+        let check_titlee = funtion_helper.valid_input(titlee);
+        let check_price = funtion_helper.valid_input(price);
+        let check_address = funtion_helper.valid_input(address);
+        let check_description = funtion_helper.valid_input(description);
+        let check_date = funtion_helper.valid_input(date);
+        let check_checklang = funtion_helper.valid_input(checklang);
         // check null
-        if (check_name == false || check_titlee == false || check_des_n == false || check_des_d == false || check_goal == false) {
+        if (check_price == false || check_titlee == false || check_address == false || check_description == false || check_date == false || check_titlee == false || check_checklang == false) {
             res.render(page.page_error);
         }
-
+        if (checklang == 'en') {
+            table_event = table_event_en;
+        } else {
+            table_event = table_event_vi;
+        }
         let path_name = file.files.name.split('.');
         let new_name_file = uuidv1() + '.' + path_name[1];
         //path tmp trên server
@@ -68,17 +86,17 @@ router.post('/add_event', function (req, res, next) {
         var newpath = form.uploadDir + new_name_file;
         fs.rename(path, newpath, function (err) {
             if (err) throw err;
-            info_support.create({
-                fullName: name,
+            table_event.create({
+                fullName: titlee,
                 title: titlee,
-                address: des_n,
-                description: des_d,
+                address: address,
+                description: description,
                 path_img: new_name_file,
-                status: '1',
-                total_view: 0,
-                money: goal
+                status: 0,
+                price: price,
+                date: date
             });
-            res.redirect('/authen/');
+            res.redirect('/admin-home/home');
         });
     });
     return;
