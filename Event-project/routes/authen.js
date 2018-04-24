@@ -51,7 +51,7 @@ router.get('/authen', function (req, res, next) {
  * Refresh login page
  */
 router.get('/login', function (req, res, next) {
-    res.redirect('/admin/login');
+    res.render(page_common.page_login, { mess: 'Please login' });
 });
 
 
