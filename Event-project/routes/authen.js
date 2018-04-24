@@ -36,7 +36,8 @@ router.post('/authen', function (req, res, next) {
             res.redirect('/admin-home/home');
         }
     }).catch(function (e) {
-        res.redirect('/admin/login');
+        console.log(e);
+        res.render(page_common.page_error);
     });
 });
 
@@ -51,7 +52,12 @@ router.get('/authen', function (req, res, next) {
  * Refresh login page
  */
 router.get('/login', function (req, res, next) {
-    res.render(page_common.page_login, { mess: 'Please login' });
+    let user = req.session.user_login_okie;
+    if (user == null || user == '' || user == "") {
+        res.render(page_common.page_login, { mess: 'Please login' });
+    } else {
+        res.render(page_common.page_admin, { user_login: user_name });
+    }
 });
 
 
