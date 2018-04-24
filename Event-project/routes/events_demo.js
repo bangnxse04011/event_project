@@ -42,7 +42,7 @@ router.get('/:lang/:event', function (req, res, next) {
         } else if (events == 'Showroom') {
             status = events_dao.Showroom;
         }
-        req.session.CUR_URl = '/' + language + "/" + events;
+        req.session.CUR_URl = '/' + language;
         if (language == 'vi') {
             db_events_vi.findAll(
                 {
