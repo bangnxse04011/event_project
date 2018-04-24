@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const fs = require("fs");
-var formidable = require('formidable');
+const formidable = require('formidable');
 const title_common = require('../public/javascripts/common/title_common');
 const info_common = require('../public/javascripts/common/info_common');
 const page_common = require('../public/javascripts/common/page_common');
@@ -48,12 +48,8 @@ router.post('/add_event', function (req, res, next) {
         let path = __dirname;
         var table_event = null;
         path = path.replace('routes', '');
-
         form.uploadDir = path + '/public/stylesheets/img/';
-
-
         form.parse(req, function (err, fields, file) {
-
             var titlee = fields.title;
             var price = fields.price;
             var address = fields.address;
@@ -68,9 +64,10 @@ router.post('/add_event', function (req, res, next) {
             let check_date = funtion_helper.valid_input(date);
             let check_checklang = funtion_helper.valid_input(checklang);
             // check null
-            if (check_price == false || check_titlee == false || check_address == false || check_description == false || check_date == false || check_titlee == false || check_checklang == false) {
-                res.render(page.page_error);
-            }
+            // if (check_price == false || check_titlee == false || check_address == false || check_description == false || check_date == false || check_titlee == false || check_checklang == false) {
+            //     res.render(page_common.page_error);
+            //     return;
+            // }
             if (checklang == 'en') {
                 table_event = table_event_en;
             } else {
@@ -91,16 +88,15 @@ router.post('/add_event', function (req, res, next) {
                     description: description,
                     path_img: new_name_file,
                     status: 0,
-                    price: price
-                    // date: date
-                })
-                res.redirect('/admin-home/home');
+                    price: price,
+                    date: date
+                }).then(user => {
+                    res.redirect('/admin-home/home');
+                });
             });
-
         });
     } catch (e) {
-        console.log("------------------------------");
-        console.log(e);
+        res.render(page_common.page_error);
     }
 });
 
