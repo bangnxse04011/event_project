@@ -19,7 +19,7 @@ $(document).ready(function () {
                 $('#loadDataGalleryEdit').html(str);
             }
         }
-        xhttp.open("GET", "http://localhost:3000/admin-home/findOne_data_edit?lang=" + lang +"&id="+ id);
+        xhttp.open("GET", "http://150.95.109.217/admin-home/findOne_data_edit?lang=" + lang +"&id="+ id);
         xhttp.send();
 
     });
