@@ -51,16 +51,7 @@ router.get('/authen', function (req, res, next) {
  * Refresh login page
  */
 router.get('/login', function (req, res, next) {
-    try {
-        let user = req.session.user_login_okie;
-        if (user == null || user == '' || user == "") {
-            res.render(page_common.page_login, { mess: 'Please login' });
-        } else {
-            res.redirect('/admin-home/home');
-        }
-    } catch (e) {
-        res.redirect('/admin/login');
-    }
+    res.redirect('/admin/login');
 });
 
 
