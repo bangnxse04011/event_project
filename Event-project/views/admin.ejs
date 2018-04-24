@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
-<title><%= info_total_home_page[0] %></title>
+<title>
+  <%= info_total_home_page[0] %>
+</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta property="og:description" content="Mic on là một chương trình nhằm tìm kiếm, thu hút và thỏa mãn các tài năng trẻ trong lĩnh vực âm nhạc, FPTU - Melody Club và Gác Xép Band đồng tổ chức dưới sự tài trợ của nhãn hàng TH True Milk và PDP khối phổ thông FPT. ">
@@ -17,14 +19,24 @@
 
   <div class="container w3-bar w3-green">
 
-    <button class="w3-bar-item w3-button w3-large" onclick="location.href='/'"> <%= menu_data.menu_homepage %></button>
-    <button class="w3-bar-item w3-button w3-large" onclick="openCity('upload_event')"> <%= menu_data.post_event_admin %></button>
-    <button class="w3-bar-item w3-button w3-large" onclick="openCity('upload_congdong')"> <%= menu_data.post_gallery_admin %></button>
-    <button class="w3-bar-item w3-button w3-large" onclick="openCity('delete')"> <%= menu_data.edit_post %></button>
-    
+    <button class="w3-bar-item w3-button w3-large" onclick="location.href='/'">
+      <%= menu_data.menu_homepage %>
+    </button>
+    <button class="w3-bar-item w3-button w3-large" onclick="openCity('upload_event')">
+      <%= menu_data.post_event_admin %>
+    </button>
+    <button class="w3-bar-item w3-button w3-large" onclick="openCity('upload_congdong')">
+      <%= menu_data.post_gallery_admin %>
+    </button>
+    <button class="w3-bar-item w3-button w3-large" onclick="openCity('delete')">
+      <%= menu_data.edit_post %>
+    </button>
+
     <button class="w3-bar-item w3-button w3-large" onclick="openCity('chat_24h')">Chat Trực Tuyến</button>
     <button class="w3-bar-item w3-button w3-large w3-right">
-      <a href="/admin/log_out"><%= menu_data.logout %></a>
+      <a href="/admin/log_out">
+        <%= menu_data.logout %>
+      </a>
     </button>
   </div>
 
@@ -35,104 +47,121 @@
   </div>
 
   <div class="container">
-  <div id="upload_event" class="container w3-display-container city" >
-    <form class="w3-container w3-card-4 " action="/admin-home/add_event" method="POST" enctype="multipart/form-data">
-      <h1 style="text-shadow:1px 1px 0 #444"><%= menu_data.post_event_admin %></h1>
+    <div id="upload_event" class="container w3-display-container city">
+      <form class="w3-container w3-card-4 " action="/admin-home/add_event/gallary" method="POST" enctype="multipart/form-data">
+        <h1 style="text-shadow:1px 1px 0 #444">
+          <%= menu_data.post_event_admin %>
+        </h1>
 
-      <div class="w3-dropdown-hover">
-        <select class="w3-button w3-card-4" name="lang_add"> 
-          <option value="en">Đăng Tiếng Anh </option>
-          <option value="vi">Đăng Tiếng Việt </option>
-        </select>
-      </div>
-
-      <p>
-        <label>Tiêu đề</label>
-        <input class="w3-input" type="text" name="title" />
-      </p>
-      <p>
-        <label>Giá</label>
-        <input class="w3-input" type="number" name="price" />
-      </p>
-      <p>
-        <label>Địa chỉ</label>
-        <input class="w3-input" type="text" name="address" />
-      </p>
-      <label>Miêu tả </label>
-      <textarea class="w3-input" placeholder="Write something.." name="description" /></textarea>
-      </br>
-      <label>Ngày tổ chức sự kiện</label>
-      <input type="date" class="w3-input" placeholder="Write something.." name="date" />
-      </br>
-      <label>Chọn Ảnh</label>
-      <input type="file" class="w3-input" placeholder="Write something.." name="files" />
-      </br>
-      <input class="w3-button w3-green" type="submit" value="Đăng">
-      </p>
-    </form>
-  </div>
-
-  <div id="upload_congdong" class="container w3-display-container city" style="display:none">
-    <form class="w3-container w3-card-4 " action="/admin-home/add_cd_vilucky" method="POST" enctype="multipart/form-data">
-      <h1 style="text-shadow:1px 1px 0 #444"><%= menu_data.post_gallery_admin %></h1>
-      <p>
-        <label>Tiêu đề</label>
-        <input class="w3-input" type="text" name="title" />
-      </p>
-      <p>
-        <label>Giá</label>
-        <input class="w3-input" type="number" name="price" />
-      </p>
-      <p>
-        <label>Địa chỉ</label>
-        <input class="w3-input" type="number" name="address" />
-      </p>
-      <label>Miêu tả </label>
-      <textarea class="w3-input" placeholder="Write something.." name="description" /></textarea>
-      </br>
-      <label>Ngày tổ chức sự kiện</label>
-      <input type="date" class="w3-input" placeholder="Write something.." name="date" />
-      </br>
-      <label>Chọn Ảnh</label>
-      <input type="file" class="w3-input" placeholder="Write something.." name="files" />
-      </br>
-      <input class="w3-button w3-green" type="submit" value="Đăng">
-      </p>
-    </form>
-  </div>
-  <div id="delete" class="container w3-display-container city" style="display:none">
-    <form class="w3-container w3-card-4 " action="/admin/add_cd_vilucky" method="POST" enctype="multipart/form-data">
-      <h1 style="text-shadow:1px 1px 0 #444">Chỉnh sửa</h1>
-      <input type="text" id="id_video" hidden />
-      <p>
-    
         <div class="w3-dropdown-hover">
-          <select class="w3-button w3-card-4" id="type_edit"> 
-              <option value="">--Chọn kiểu chỉnh sửa--</option>            
-            <option value="event">Chỉnh sửa chiến dịch</option>
-            <option value="community">Chỉnh sửa cộng đồng</option>
+          <select class="w3-button w3-card-4" name="lang_add">
+            <option value="en">Đăng Tiếng Anh </option>
+            <option value="vi">Đăng Tiếng Việt </option>
           </select>
         </div>
-      </p>
-      <p>
-       
+
+        <p>
+          <label>Tiêu đề</label>
+          <input class="w3-input" type="text" name="title" />
+        </p>
+        <p>
+          <label>Giá</label>
+          <input class="w3-input" type="number" name="price" />
+        </p>
+        <p>
+          <label>Địa chỉ</label>
+          <input class="w3-input" type="text" name="address" />
+        </p>
+        <label>Miêu tả </label>
+        <textarea class="w3-input" placeholder="Write something.." name="description" /></textarea>
+        </br>
+        <label>Ngày tổ chức sự kiện</label>
+        <input type="date" class="w3-input" placeholder="Write something.." name="date" />
+        </br>
+        <label>Chọn Ảnh</label>
+        <input type="file" class="w3-input" placeholder="Write something.." name="files" />
+        </br>
+        <input class="w3-button w3-green" type="submit" value="Đăng">
+        </p>
+      </form>
+    </div>
+
+    <div id="upload_congdong" class="container w3-display-container city" style="display:none">
+      <form class="w3-container w3-card-4 " action="/admin-home/add_event/event" method="POST" enctype="multipart/form-data">
+        <h1 style="text-shadow:1px 1px 0 #444">
+          <%= menu_data.post_gallery_admin %>
+        </h1>
         <div class="w3-dropdown-hover">
-          <select class="w3-button w3-card-4" id="link_video"> 
-            <option value="">--Chọn bài cần sửa--</option>
+          <select class="w3-button w3-card-4" name="gallary">
+            <option value="0">Đăng Sự Kiện </option>
+            <option value="1">Đăng Triển lãm </option>
+            <option value="2">Đăng Showrom </option>
           </select>
         </div>
-      </p>
-      <p>
+        <div class="w3-dropdown-hover">
+          <select class="w3-button w3-card-4" name="lang_add">
+            <option value="en">Đăng Tiếng Anh </option>
+            <option value="vi">Đăng Tiếng Việt </option>
+          </select>
+        </div>
+        <p>
+          <label>Tiêu đề</label>
+          <input class="w3-input" type="text" name="title" />
+        </p>
+        <p>
+          <label>Giá</label>
+          <input class="w3-input" type="number" name="price" />
+        </p>
+        <p>
+          <label>Địa chỉ</label>
+          <input class="w3-input" type="text" name="address" />
+        </p>
+        <label>Miêu tả </label>
+        <textarea class="w3-input" placeholder="Write something.." name="description" /></textarea>
+        </br>
+        <label>Ngày tổ chức sự kiện</label>
+        <input type="date" class="w3-input" placeholder="Write something.." name="date" />
+        </br>
+        <label>Chọn Ảnh</label>
+        <input type="file" class="w3-input" placeholder="Write something.." name="files" />
+        </br>
+        <input class="w3-button w3-green" type="submit" value="Đăng">
+        </p>
+      </form>
+    </div>
+    <div id="delete" class="container w3-display-container city" style="display:none">
+      <form class="w3-container w3-card-4 " action="/admin/add_cd_vilucky" method="POST" enctype="multipart/form-data">
+        <h1 style="text-shadow:1px 1px 0 #444">Chỉnh sửa</h1>
+        <input type="text" id="id_video" hidden />
+        <p>
 
-    <br/>
-    <form class="w3-container w3-card-4" action="/admin/delete_post" method="GET">
-      <input id="id_delete" class="w3-button w3-green" type="hidden" value="" name="id_delete"/>
-      <input id="type" class="w3-button w3-green" type="hidden" value="" name="type"/>
-      <input class="w3-button w3-green" type="submit" value="Xóa bài này">
-    </form>
-    
+          <div class="w3-dropdown-hover">
+            <select class="w3-button w3-card-4" id="type_edit">
+              <option value="">--Chọn kiểu chỉnh sửa--</option>
+              <option value="event">Chỉnh sửa chiến dịch</option>
+              <option value="community">Chỉnh sửa cộng đồng</option>
+            </select>
+          </div>
+        </p>
+        <p>
+
+          <div class="w3-dropdown-hover">
+            <select class="w3-button w3-card-4" id="link_video">
+              <option value="">--Chọn bài cần sửa--</option>
+            </select>
+          </div>
+        </p>
+        <p>
+
+          <br/>
+          <form class="w3-container w3-card-4" action="/admin/delete_post" method="GET">
+            <input id="id_delete" class="w3-button w3-green" type="hidden" value="" name="id_delete" />
+            <input id="type" class="w3-button w3-green" type="hidden" value="" name="type" />
+            <input class="w3-button w3-green" type="submit" value="Xóa bài này">
+          </form>
+
+    </div>
   </div>
-</div>
   <script>
     function openCity(cityName) {
       var i;

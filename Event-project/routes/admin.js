@@ -10,6 +10,8 @@ const funtion_helper = require('../public/javascripts/common/helper');
 const uuidv1 = require('uuid/v1');
 const table_event_en = require('../public/javascripts/dao/db_table_event_demo_en');
 const table_event_vi = require('../public/javascripts/dao/db_table_event_demo_vi');
+const table_collection_en = require('../public/javascripts/dao/db_table_collection_en');
+const table_collection_vi = require('../public/javascripts/dao/db_table_collection_vi');
 
 /**
  * Method home page
@@ -42,7 +44,7 @@ router.get('/home', function (req, res, next) {
 /**
  * add Event
  */
-router.post('/add_event', function (req, res, next) {
+router.post('/add_event/:type', function (req, res, next) {
     try {
         var form = new formidable.IncomingForm();
         let path = __dirname;
@@ -56,6 +58,7 @@ router.post('/add_event', function (req, res, next) {
             var description = fields.description;
             var date = fields.date;
             var checklang = fields.lang_add;
+            var collection_value = 0;
             // Get input
             let check_titlee = funtion_helper.valid_input(titlee);
             let check_price = funtion_helper.valid_input(price);
@@ -68,34 +71,50 @@ router.post('/add_event', function (req, res, next) {
             //     res.render(page_common.page_error);
             //     return;
             // }
-            if (checklang == 'en') {
-                table_event = table_event_en;
+            let type = req.params.type;
+            console.log(type + "---------------type-----------------------------");
+            // Check type and lang
+            if (type == 'event') {
+                collection_value = fields.gallary;
+                console.log(collection_value + "--------------------------collection_value------------------");
+                if (checklang == 'en') {
+                    table_event = table_collection_en;
+                } else {
+                    table_event = table_collection_vi;
+                }
             } else {
-                table_event = table_event_vi;
+                if (checklang == 'en') {
+                    table_event = table_event_en;
+                } else {
+                    table_event = table_event_vi;
+                }
             }
             let path_name = file.files.name.split('.');
-            let new_name_file = uuidv1() + '.' + path_name[1];
-            //path tmp trên server
-            var path = file.files.path;
-            //thiết lập path mới cho file
-            var newpath = form.uploadDir + new_name_file;
-            fs.rename(path, newpath, function (err) {
-                if (err) throw err;
-                table_event.create({
-                    fullName: titlee,
-                    title: titlee,
-                    address: address,
-                    description: description,
-                    path_img: new_name_file,
-                    status: 0,
-                    price: price,
-                    date: date
-                }).then(user => {
-                    res.redirect('/admin-home/home');
+            if (path_name && path_name.length > 1) {
+                let new_name_file = uuidv1() + '.' + path_name[1];
+                //path tmp trên server
+                var path = file.files.path;
+                //thiết lập path mới cho file
+                var newpath = form.uploadDir + new_name_file;
+                fs.rename(path, newpath, function (err) {
+                    if (err) throw err;
+                    table_event.create({
+                        fullName: titlee,
+                        title: titlee,
+                        address: address,
+                        description: description,
+                        path_img: new_name_file,
+                        status: collection_value,
+                        price: price,
+                        date: date
+                    }).then(user => {
+                        res.redirect('/admin-home/home');
+                    });
                 });
-            });
+            }
         });
     } catch (e) {
+        console.log(e);
         res.render(page_common.page_error);
     }
 });
