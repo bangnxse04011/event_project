@@ -152,12 +152,12 @@
           <% gallery_details.forEach(function(info) { %>
             <div class="row rowsecond">
               <div class="col-md-6">
-                <a href="/details/<%= info.id %>">
+                <a href="/<%= controller %>/<%= info.id %>">
                   <img src="/stylesheets/img/<%= info.path_img %>" alt="Smiley face" height="123.75px" width="100%">
                 </a>
               </div>
               <div class="col-md-6" style="line-height:200%;">
-                <a href="/details/<%= info.id %>">
+                <a href="/<%= controller %>/<%= info.id %>">
                   <span style="font-family: 'Times New Roman', Times, serif !important; font-size:18px;">
                     <%= info.title %>
                   </span>

@@ -41,6 +41,17 @@ router.get('/:id', function (req, res, next) {
         id: id
       }
     }).then(result => {
+      // get total view
+      let total_view = result.dataValues.total_view;
+      if (total_view == null || total_view == '' || total_view == "") {
+        total_view = 1;
+      } else {
+        total_view += 1;
+      }
+      // Update view data
+      result.updateAttributes({
+        total_view: total_view
+      })
       // Find all data from table event
       tableshow.findAll(
         {
@@ -49,7 +60,7 @@ router.get('/:id', function (req, res, next) {
         }
       ).then(result_limit_6 => {
         let gallery_details = result_limit_6.map((r) => (r.toJSON()));
-        res.render(page_common.page_detail, { info_total_home_page: info_total_home_page, menu_data: menu_data, lang_session: lang, info: result, gallery_details: gallery_details });
+        res.render(page_common.page_detail, { info_total_home_page: info_total_home_page, menu_data: menu_data, lang_session: lang, info: result, gallery_details: gallery_details, controller: 'details' });
       });
     })
   } catch (e) {
