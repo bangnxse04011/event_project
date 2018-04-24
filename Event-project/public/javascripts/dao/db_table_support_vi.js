@@ -15,7 +15,7 @@ const Info_support_vi = connection_db.define('info_support_vi', {
     money: { type: Sequelize.INTEGER }
 });
 
-// Info_support_vi.sync();
+Info_support_vi.sync();
 
 module.exports = Info_support_vi;
 
