@@ -3,6 +3,10 @@
 
 <head>
   <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta property="og:description" content="<%=info.description %>">
+  <meta property="og:title" content="<%=info.fullName %>">
+  <meta property="og:image" content="<%=info.path_img %>">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>
@@ -23,15 +27,13 @@
   <script src="/javascripts/index.js"></script>
   <script src="/javascripts/controllGallery.js"></script>
   <div id="fb-root"></div>
-  <script>
-    (function (d, s, id) {
+  <script>(function (d, s, id) {
       var js, fjs = d.getElementsByTagName(s)[0];
       if (d.getElementById(id)) return;
       js = d.createElement(s); js.id = id;
-      js.src = 'https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v2.12&appId=418017485293597&autoLogAppEvents=1';
+      js.src = 'https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v2.12&appId=716729558716068&autoLogAppEvents=1';
       fjs.parentNode.insertBefore(js, fjs);
-    }(document, 'script', 'facebook-jssdk'));
-  </script>
+    }(document, 'script', 'facebook-jssdk'));</script>
 </head>
 
 <body>
@@ -133,10 +135,9 @@
               </p>
               <%= menu_data.view %>
             </div>
-            <div class="fb-share-button" data-href="https://vilucky.com/events/<%= info.id %>" data-layout="button_count" data-size="large"
-              data-mobile-iframe="true">
-              <a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fvilucky.com%2Fevents%2F<%= info.id %>&amp;src=sdkpreparse"
-                class="fb-xfbml-parse-ignore btn btn-info btn-large">
+            <div class="fb-share-button" data-href="http://150.95.109.217/<%= controller %>/<%= info.id %>" data-layout="button_count"
+              data-size="large" data-mobile-iframe="true">
+              <a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2F150.95.109.217%2F<%= controller %>%2F<%= info.id %>&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore btn btn-info btn-large">
                 <b>Chia sẻ</b>
               </a>
             </div>
@@ -169,7 +170,7 @@
       </div>
 
       <div style="margin-top:15%" class="col-12">
-        <div class="fb-comments" data-href="https://vilucky.com/details/<%= info.id %>" data-numposts="5" data-colorscheme="light"></div>
+        <div class="fb-comments" data-href="http://150.95.109.217/<%= controller %>/<%= info.id %>" data-numposts="5" data-colorscheme="light"></div>
       </div>
 
     </div>
