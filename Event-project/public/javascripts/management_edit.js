@@ -40,7 +40,7 @@ $(document).ready(function () {
                 $('#post_edit_gallery').html(str);
             }
         }
-        xhttp.open("GET", "http://localhost:3000/admin-home/find_data_edit?lang=" + lang);
+        xhttp.open("GET", "http://150.95.109.217/admin-home/find_data_edit?lang=" + lang);
         xhttp.send();
 
     });
