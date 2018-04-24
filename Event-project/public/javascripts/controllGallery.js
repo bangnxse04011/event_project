@@ -9,7 +9,7 @@ $(document).ready(function () {
                 var data = JSON.parse(list_event);
                 let str = "";
                 for (var i = 0; i < data.length; i++) {
-                    str += '<a href="/details/' + data[i]['id'] + '"> <div class="mu-single-gallery col-md-4"> <div class="mu-single-gallery-item"> <figure class="mu-single-gallery-img"> <img alt="img" src="/stylesheets/img/' + data[i]['path_img'] + '"> <div class="mu-single-gallery-info"> <div class="titleonhover"><h2>' + data[i]['title'] + '</h2> <div class="perTitle" >' + data[i]['address'] + '</div> <div class="perTitle">' + data[i]['description'] + '</div> </div> </div> </figure> </div> </div> </a>';
+                    str += '<a href="/details/' + data[i]['id'] + '"> <div class="mu-single-gallery col-md-4"> <div class="mu-single-gallery-item"> <figure class="mu-single-gallery-img"> <img class="fixSizeImg" alt="img" src="/stylesheets/img/' + data[i]['path_img'] + '"> <div class="mu-single-gallery-info"> <div class="titleonhover"><h2>' + data[i]['title'] + '</h2> <div class="perTitle" >' + data[i]['address'] + '</div> <div class="perTitle">' + data[i]['description'] + '</div> </div> </div> </figure> </div> </div> </a>';
                 }
                 $('#gallery').html(str);
             }
