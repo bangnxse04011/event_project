@@ -25,7 +25,7 @@ $(document).ready(function () {
                 $('#link_video').html(str);
             }
         }
-        xhttp.open("GET", "http://150.95.109.217/admin-home/find_all?change=" + change);
+        xhttp.open("GET", "http://ebcvietnam.com/admin-home/find_all?change=" + change);
         xhttp.send();
 
     });

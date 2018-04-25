@@ -22,7 +22,7 @@ function find_all_events(event) {
             $('.event_showroom ul').html(str);
         }
     }
-    xhttp.open("GET", "http://150.95.109.217/events/" + language.trim() + "/" + event.trim());
+    xhttp.open("GET", "http://ebcvietnam.com/events/" + language.trim() + "/" + event.trim());
     xhttp.send();
 }
 

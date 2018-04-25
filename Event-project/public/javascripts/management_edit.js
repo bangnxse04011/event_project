@@ -19,7 +19,7 @@ $(document).ready(function () {
                 $('#loadDataGalleryEdit').html(str);
             }
         }
-        xhttp.open("GET", "http://150.95.109.217/admin-home/findOne_data_edit?lang=" + lang +"&id="+ id);
+        xhttp.open("GET", "http://ebcvietnam.com/admin-home/findOne_data_edit?lang=" + lang +"&id="+ id);
         xhttp.send();
 
     });
@@ -40,8 +40,7 @@ $(document).ready(function () {
                 $('#post_edit_gallery').html(str);
             }
         }
-        xhttp.open("GET", "http://150.95.109.217/admin-home/find_data_edit?lang=" + lang);
+        xhttp.open("GET", "http://ebcvietnam.com/admin-home/find_data_edit?lang=" + lang);
         xhttp.send();
-
     });
 });

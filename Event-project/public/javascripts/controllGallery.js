@@ -14,7 +14,7 @@ $(document).ready(function () {
                 $('#gallery').html(str);
             }
         }
-        xhttp.open("GET", "http://150.95.109.217/gallery/" + language.trim());
+        xhttp.open("GET", "http://ebcvietnam.com/gallery/" + language.trim());
         xhttp.send();
     } catch (e) {
         alert(e);
