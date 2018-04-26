@@ -35,6 +35,9 @@ body {
   line-height: 24px;
 }
 
+.back-color-index {
+  background-color: #ebebeb;
+}
 .no-padding {
   padding: 0;
 }
