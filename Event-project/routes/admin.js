@@ -10,8 +10,6 @@ const funtion_helper = require('../public/javascripts/common/helper');
 const uuidv1 = require('uuid/v1');
 const table_event_en = require('../public/javascripts/dao/db_table_event_demo_en');
 const table_event_vi = require('../public/javascripts/dao/db_table_event_demo_vi');
-const table_collection_en = require('../public/javascripts/dao/db_table_collection_en');
-const table_collection_vi = require('../public/javascripts/dao/db_table_collection_vi');
 const table_gallery_vi = require('../public/javascripts/dao/db_table_collection_vi');
 const table_gallery_en = require('../public/javascripts/dao/db_table_collection_en');
 /**
@@ -85,15 +83,15 @@ router.post('/add_event/:type', function (req, res, next) {
             if (type == 'event') {
                 collection_value = fields.gallary;
                 if (checklang == 'en') {
-                    table_event = table_collection_en;
-                } else {
-                    table_event = table_collection_vi;
-                }
-            } else {
-                if (checklang == 'en') {
                     table_event = table_event_en;
                 } else {
                     table_event = table_event_vi;
+                }
+            } else {
+                if (checklang == 'en') {
+                    table_event = table_gallery_en;
+                } else {
+                    table_event = table_gallery_vi;
                 }
             }
             let path_name = file.files.name.split('.');
@@ -200,7 +198,7 @@ router.get('/delete_post', function (req, res, next) {
     res.redirect("/admin-home/home");
 });
 /**
- * Find all data by lang
+ * Find all data gallery by lang
  */
 
 router.get('/find_data_edit', function (req, res, next) {
@@ -237,9 +235,53 @@ router.get('/find_data_edit', function (req, res, next) {
     }
 
 });
-
 /**
- * Find one data
+ * Find all data showroom by lang and id
+ */
+
+router.get('/find_data_showroom_edit', function (req, res, next) {
+    let user = req.session.user_login_okie;
+    if (user == null || user == '' || user == "") {
+        res.render(page_common.page_login, { mess: 'Please login' });
+    }
+    let lang = req.query.lang;
+    let type = req.query.type;
+    if (lang == null || lang == '' || lang == "" || type == null || type == '' || type == "") {
+        res.render(page_common.page_error);
+    }
+
+    if (lang == 'en') {
+
+        table_event_en.findAll({
+
+            plain: false,
+            where: {
+                status: type
+            }
+        }).then(video => {
+            let video_array = video.map((r) => (r.toJSON()));
+            res.end(JSON.stringify(video_array));
+        }).catch(function (err) {
+            res.render(page_common.page_error);
+        });
+    } else {
+     
+        table_event_en.findAll({
+            plain: false,
+            where: {
+                status: type
+            }
+        }).then(video => {
+            let video_array = video.map((r) => (r.toJSON()));
+            res.end(JSON.stringify(video_array));
+        }).catch(function (err) {
+            res.render(page_common.page_error);
+        });
+    }
+
+});
+/**
+ * Find one data gallery
  */
 router.get('/findOne_data_edit', function (req, res, next) {
     let user = req.session.user_login_okie;
@@ -286,7 +328,57 @@ router.get('/findOne_data_edit', function (req, res, next) {
         });
     }
 });
- /**
- * Method update data
+/**
+ * Find one data event
  */
+router.get('/findOne_data_edit_event', function (req, res, next) {
+    let user = req.session.user_login_okie;
+    if (user == null || user == '' || user == "") {
+        res.render(page_common.page_login, { mess: 'Please login' });
+    }
+    let lang = req.query.lang;
+    let id = req.query.id;
+    let type = req.query.type;
+  
+    if (lang == null || lang == '' || lang == "" || id == null || id == '' || id == "") {
+        res.render(page_common.page_error);
+    }
+
+    if (lang == 'en') {
+        table_event_en.findAll({
+            plain: false,
+            where: {
+                id: id,
+                status:type
+            }
+
+        }).then(video => {
+        
+            let video_array = video.map((r) => (r.toJSON()));
+            res.end(JSON.stringify(video_array));
+        }).catch(function (err) {
+            console.log(err);
+            res.render(page_common.page_error);
+        });
+    } else {
+        table_event_vi.findAll({
+            plain: false,
+            where: {
+                id: id,
+                status:type
+            }
+        }).then(video => {
+            console.log("==========================================");
+            console.log(video);
+            let video_array = video.map((r) => (r.toJSON()));
+            res.end(JSON.stringify(video_array));
+        }).catch(function (err) {
+            console.log(err);
+            res.render(page_common.page_error);
+        });
+    }
+});
+/**
+* Method update data
+*/
 module.exports = router;

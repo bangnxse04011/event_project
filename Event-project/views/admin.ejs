@@ -11,6 +11,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="/javascripts/management_delete.js"></script>
 <script src="/javascripts/management_edit.js"></script>
+<script src="/javascripts/management_showroom.js"></script>
 
 <body>
 
@@ -177,48 +178,27 @@
         </h1>
         <div class="w3-dropdown-hover">
           <select class="w3-button w3-card-4" id="post_edit_type" name="gallary">
-              <option value="">Chọn kiểu sửa</option>
+            <option value="">Chọn kiểu sửa</option>
             <option value="0">Sửa Sự Kiện </option>
             <option value="1">Sửa Triển lãm </option>
             <option value="2">Sửa Showrom </option>
           </select>
         </div>
-        <div class="w3-dropdown-hover">
+        <div class="w3-dropdown-hover" id="loadfirstDropdown">
           <select class="w3-button w3-card-4" id="post_edit_lang" name="lang_add">
-              <option value="">Chọn ngôn ngữ </option>
-            <option value="en">Sửa Tiếng Anh </option>
-            <option value="vi">Sửa Tiếng Việt </option>
+            <option value="">Chọn ngôn ngữ </option>
           </select>
         </div>
-        <div class="w3-dropdown-hover">
-          <select class="w3-button w3-card-4" id='post_edit_showroom' name="lang_add">
+        <div class="w3-dropdown-hover" id="loadsecondDropdown">
+          <select class="w3-button w3-card-4" id="post_edit_showroom" name="lang_add">
             <option value="">Chọn bài cần sửa </option>
           </select>
         </div>
         <br/>
         <br/>
-      <div id='loadDataEditShowRoow'>
-          <p>
-              <label>Tiêu đề</label>
-              <input class="w3-input" type="text" name="title" />
-            </p>
-            <p>
-              <label>Giá</label>
-              <input class="w3-input" type="number" name="price" />
-            </p>
-            <p>
-              <label>Địa chỉ</label>
-              <input class="w3-input" type="text" name="address" />
-            </p>
-            <label>Miêu tả </label>
-            <textarea class="w3-input" placeholder="Write something.." name="description" /></textarea>
-            </br>
-            <label>Ngày tổ chức sự kiện</label>
-            <input type="date" class="w3-input" placeholder="Write something.." name="date" />
-            </br>
-            <label>Chọn Ảnh</label>
-            <input type="file" class="w3-input" placeholder="Write something.." name="files" />
-      </div>
+        <div id='loadDataEditShowRoow'>
+         
+        </div>
         </br>
         <input class="w3-button w3-green" type="submit" value="Đăng">
       </form>
