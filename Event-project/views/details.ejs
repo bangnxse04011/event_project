@@ -122,7 +122,7 @@
             <img width="700px" alt="img" src="/stylesheets/img/<%=info.path_img %>">
           </div>
           <div class="row rowsecond">
-            <h2>
+            <h2 style="color: brown;">
               <%=info.fullName %>
             </h2>
           </div>
@@ -145,8 +145,8 @@
           </div>
 
           <div class="row rowsecond" style="width: 87%;">
-            <h3>Thông tin chi tiết: </h3>
-            <%=info.description %>
+            <h3><b>Thông tin chi tiết:</b> </h3>
+            <i><%=info.description %></i>
           </div>
         </div>
         <div class="col-md-4 fixSizecolumn" style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;">
@@ -161,17 +161,24 @@
               <div class="col-md-6" style="line-height:200%;">
                 <a href="/<%= controller %>/<%= info.id %>">
                   <span style="font-family: 'Times New Roman', Times, serif !important; font-size:20px;">
-                    <b><%= info.title %></b>
+                    <b>
+                      <%= info.title %>
+                    </b>
                   </span>
                 </a>
                 <a href="/<%= controller %>/<%= info.id %>">
                   <h5 style="font-family: 'Times New Roman', Times, serif !important;">
-                    <i><%= info.total_view %> - <%= menu_data.view %></i>
+                    <i>
+                      <%= info.total_view %> -
+                        <%= menu_data.view %>
+                    </i>
                   </h5>
                 </a>
                 <a href="/">
                   <h5 style="font-family: 'Times New Roman', Times, serif !important;">
-                    <b><i>EBCVietnam Company</i></b>
+                    <b>
+                      <i>EBCVietnam Company</i>
+                    </b>
                   </h5>
                 </a>
               </div>
