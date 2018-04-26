@@ -56,7 +56,7 @@ router.get('/:id', function (req, res, next) {
       tableshow.findAll(
         {
           plain: false,
-          limit: 4
+          limit: 6
         }
       ).then(result_limit_6 => {
         let gallery_details = result_limit_6.map((r) => (r.toJSON()));
