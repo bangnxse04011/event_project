@@ -31,7 +31,7 @@
       var js, fjs = d.getElementsByTagName(s)[0];
       if (d.getElementById(id)) return;
       js = d.createElement(s); js.id = id;
-      js.src = 'https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v2.12&appId=716729558716068&autoLogAppEvents=1';
+      js.src = 'https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.12&appId=716729558716068&autoLogAppEvents=1';
       fjs.parentNode.insertBefore(js, fjs);
     }(document, 'script', 'facebook-jssdk'));</script>
 </head>
@@ -130,7 +130,7 @@
             <div style="text-align: center;" class="col-sm-6 col-6">
               <span style="font-size: 20px">
                 <span id="number_ungho">
-                  <%=info.total_view %> - 
+                  <%=info.total_view %> -
                 </span>
               </span>
               <%= menu_data.view %>
@@ -170,9 +170,7 @@
         </div>
       </div>
 
-      <div style="margin-top:15%" class="col-12">
-        <div class="fb-comments" data-href="http://ebcvietnam/<%= controller %>/<%= info.id %>" data-numposts="5" data-colorscheme="light"></div>
-      </div>
+      <div class="fb-comments" data-href="http://ebcvietnam.com/details/<%= info.id %>" data-numposts="5"></div>
 
     </div>
 
