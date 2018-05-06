@@ -10,7 +10,7 @@ const Feed_back_vi = connection_db.define('feed_back_vi', {
     status: { type: Sequelize.INTEGER }
 });
 
-// Feed_back_vi.sync();
+Feed_back_vi.sync();
 
 module.exports = Feed_back_vi;
 

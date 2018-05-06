@@ -16,7 +16,7 @@ const Collection_en = connection_db.define('collection_en', {
     date: { type: Sequelize.DATE }
 });
 
-// Collection_en.sync();
+Collection_en.sync();
 
 module.exports = Collection_en;
 
