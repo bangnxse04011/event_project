@@ -45,7 +45,7 @@ app.use('/lang', URL);
 app.use('/admin', authen);
 app.use('/admin-home', admin_home);
 app.use('/events-details', events_details);
-app.use('/updating', updating);
+// app.use('/updating', updating);
 
 app.use(session({
   secret: "secret",
