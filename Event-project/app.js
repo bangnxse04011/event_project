@@ -16,7 +16,7 @@ var URL = require('./routes/lang');
 var authen = require('./routes/authen');
 var events_details = require('./routes/event_details');
 var admin_home = require('./routes/admin');
-var updating = require('./routes/updating');
+// var updating = require('./routes/updating');
 
 
 
