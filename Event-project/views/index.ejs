@@ -154,7 +154,11 @@
               <div class="col-md-6">
                 <div class="mu-about-us-right">
                   <i>
-                    <%= menu_data.info_company[0]['description'] %>
+                    <% menu_data.event.forEach(function(info) { %>
+                      <p>
+                        <%= info['name'] %>
+                      </p>
+                      <% }); %>
                   </i>
                   <br/>
                   <br/>
@@ -368,11 +372,19 @@
                       </p>
                       <address>
                         <p>
-                          <i class="fa fa-phone"></i> <%= menu_data.details_company[0].phone %></p>
+                          <i class="fa fa-phone"></i>
+                          <%= menu_data.details_company[0].phone %>
+                        </p>
                         <p>
-                          <i class="fa fa-envelope-o"></i><a href="mailto:<%= menu_data.details_company[0].email %>"><%= menu_data.details_company[0].email %></a></p>
+                          <i class="fa fa-envelope-o"></i>
+                          <a href="mailto:<%= menu_data.details_company[0].email %>">
+                            <%= menu_data.details_company[0].email %>
+                          </a>
+                        </p>
                         <p>
-                          <i class="fa fa-map-marker"></i><%= menu_data.details_company[0].company_address %></p>
+                          <i class="fa fa-map-marker"></i>
+                          <%= menu_data.details_company[0].company_address %>
+                        </p>
                       </address>
                     </div>
                     <div class="mu-contact-widget">
