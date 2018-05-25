@@ -181,56 +181,7 @@
     </div>
   </section>
   <!-- Start Restaurant Menu -->
-  <section id="mu-restaurant-menu">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-12">
-          <div class="mu-restaurant-menu-area">
-
-            <div class="mu-title">
-              <!-- <span class="mu-subtitle">Discover</span> -->
-              <h2 style="color : brown">
-                <%= menu_data.page_show_room %>
-              </h2>
-            </div>
-
-            <div class="mu-restaurant-menu-content">
-              <ul class="nav nav-tabs mu-restaurant-menu">
-                <li class="active">
-                  <a href="<%= menu_data.product[0]['href'] %>" id="<%= menu_data.product[0]['href'] %>" data-toggle="tab">
-                    <%= menu_data.product[0]['name'] %>
-                  </a>
-                </li>
-                <% menu_data.product.forEach(function(info) { if(info['name'] == "Events" || info['name'] == "Sự Kiện") {} else { %>
-                  <li>
-                    <a href="#<%= info['href'] %>" id="<%= info['href'] %>" data-toggle="tab">
-                      <%= info['name'] %>
-                    </a>
-                  </li>
-                  <% }}); %>
-              </ul>
-
-              <!-- Tab panes -->
-              <div class="tab-content">
-                <div class="tab-pane fade in active">
-                  <div class="mu-tab-content-area">
-                    <div class="row">
-                      <div class="col-md-12">
-                        <div class="event_showroom">
-                          <ul class="mu-menu-item-nav"></ul>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <!-- ----------------------------------------------------- -->
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+  
 
   <section id="mu-gallery">
     <div class="container">
