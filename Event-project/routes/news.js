@@ -52,18 +52,18 @@ router.post('/add_new', function (req, res, next) {
         let details = req.body.details;
         let path_img = req.body.path_img;
         var table_new = null;
+        table_new = db_news_en;
         if (lang == 'vi') {
             table_new = db_news_vi;
-        } else if (length == 'en') {
-            table_new = db_news_en;
         }
         table_new.create({
             title: title,
             details: details,
             path_img: path_img,
             status: 0
+        }).then(user => {
+            res.redirect('/admin-home/home');
         });
-        res.end("OKIEE")
     } catch (e) {
         console.log(e);
         res.render(page_common.page_error);

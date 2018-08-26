@@ -37,6 +37,9 @@
     <button class="w3-bar-item w3-button w3-small" onclick="openCity('editpost')">
       Chỉnh sửa Sự Kiện
     </button>
+    <button class="w3-bar-item w3-button w3-small" onclick="openCity('add_new')">
+      Tin Tức
+    </button>
 
     <button class="w3-bar-item w3-button w3-small" onclick="openCity('delete')">
       Xóa bài
@@ -199,12 +202,39 @@
         <br/>
         <br/>
         <div id='loadDataEditShowRoow'>
-         
+
         </div>
-        </br>
         <input class="w3-button w3-green" type="submit" value="Đăng">
       </form>
     </div>
+
+
+    <div id="add_new" class=" w3-display-container city" style="display:none">
+      <form class="w3-container w3-card-4 " action="/news/add_new" method="POST">
+        <h1 style="text-shadow:1px 1px 0 #444">
+          Thêm Tin Tức
+        </h1>
+        <div class="w3-dropdown-hover" id="loadfirstDropdown">
+          <select class="w3-button w3-card-4" id="post_edit_lang" name="lang">
+            <option value="">Chọn ngôn ngữ </option>
+            <option value="en">Tiếng Anh </option>
+            <option value="vi">Tiếng Việt </option>
+          </select>
+        </div>
+        <br/>
+        <p>
+            <label>Tiêu đề</label>
+            <input class="w3-input" type="text" name="title" required/>
+          </p>
+          <p>
+            <label>Details</label>
+            <input class="w3-input" type="text" name="details" required/>
+          </p>
+        <br/>
+        <input class="w3-button w3-green" type="submit" value="Đăng">
+      </form>
+    </div>
+
     <div id="delete" class=" w3-display-container city" style="display:none">
       <h1 style="text-shadow:1px 1px 0 #444">Chỉnh sửa</h1>
       <input type="text" id="id_video" hidden />
