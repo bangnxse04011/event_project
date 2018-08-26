@@ -12,6 +12,7 @@ var users = require('./routes/users');
 var gallery = require('./routes/gallery');
 var details = require('./routes/details');
 var feed_back = require('./routes/feed_back');
+var news = require('./routes/news');
 var URL = require('./routes/lang');
 var authen = require('./routes/authen');
 var events_details = require('./routes/event_details');
@@ -30,17 +31,21 @@ app.set('view engine', 'ejs');
 // app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(logger('dev'));
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.urlencoded({
+  extended: false
+}));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, '/public')));
-app.use(session({ secret: 'ssshhhhh' }));
+app.use(session({
+  secret: 'ssshhhhh'
+}));
 
 app.use('/', index);
 app.use('/events', events);
 app.use('/users', users);
 app.use('/gallery', gallery);
 app.use('/details', details);
-app.use('/feed_back', feed_back);
+app.use('/news', news);
 app.use('/lang', URL);
 app.use('/admin', authen);
 app.use('/admin-home', admin_home);
