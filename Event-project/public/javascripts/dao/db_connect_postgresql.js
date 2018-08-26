@@ -4,7 +4,7 @@ const Sequelize = require('sequelize');
 /**
  * Config DB connect to postgres
  */
-const db_connection = new Sequelize('events_project', 'bangnx1', 'bangnx1', {
+const db_connection = new Sequelize('events_project', 'bangnx1', 'K0t3z42#$!', {
     host: 'localhost',
     dialect: 'postgres',
 
