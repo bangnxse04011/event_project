@@ -22,7 +22,7 @@ function find_all_events(event) {
             $('.event_showroom ul').html(str);
         }
     }
-    xhttp.open("GET", "http://ebcvietnam.com/events/" + language.trim() + "/" + event.trim());
+    xhttp.open("GET", "https://ebcvietnam.com/events/" + language.trim() + "/" + event.trim());
     xhttp.send();
 }
 
@@ -42,7 +42,7 @@ function find_all_new() {
             $('#news').html(str);
         }
     }
-    xhttp.open("GET", "http://localhost:3000/news/" + language.trim());
+    xhttp.open("GET", "https://ebcvietnam.com/news/" + language.trim());
     xhttp.send();
 }
 /**
