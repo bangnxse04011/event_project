@@ -36,7 +36,7 @@ function find_all_new() {
     xhttp.onreadystatechange = function () {
         if (xhttp.readyState == 4 && xhttp.status == 200) {
             data_news = JSON.parse(xhttp.responseText);
-            for (var i = 0; i < data_news.length; i++) {
+            for (var i = 1; i < data_news.length; i++) {
                 str += "<div class='mu-contact-content'> <div class='row'> <div class='col-md-12'> <div class='mu-contact-right'> <div class='mu-contact-widget'> <h3> " + data_news[i]["title"] + " </h3> <p> " + data_news[i]["details"] + " </p> </div> </div> </div> </div> </div>";
             }
             $('#news').html(str);
